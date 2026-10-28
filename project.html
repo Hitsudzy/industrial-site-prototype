@@ -83,9 +83,23 @@
           <span class="eyebrow">02 / Галерея</span>
           <h2 id="gallery-title">Галерея</h2>
         </div>
-        <div class="placeholder placeholder--tall">
-          <span class="placeholder__tag">Плейсхолдер · галерея-коллаж</span>
-          <p>Схемы, спецификации, сборки, 3D-модели шкафов — сгенерированные иллюстрации.</p>
+        <div class="collage">
+          <figure class="collage__item collage__item--main">
+            <div class="collage__media">
+              <!-- One drawing per concept (assets/img, tools/gen_art.py); CSS shows the active one -->
+              <img class="only-a" src="assets/img/cabinet-a.svg" width="270" height="470" loading="lazy" decoding="async" alt="Условная изометрия шкафа управления с размерами: корпус, дверь с панелью оператора, индикаторы и модули на DIN-рейках">
+              <img class="only-b" src="assets/img/cabinet-b.svg" width="270" height="470" loading="lazy" decoding="async" alt="Условная изометрия шкафа управления: корпус, дверь с панелью оператора, индикаторы и модули на DIN-рейках">
+            </div>
+            <figcaption class="collage__caption">Шкаф управления, изометрия. Иллюстрация нарисована кодом.</figcaption>
+          </figure>
+          <div class="placeholder collage__item">
+            <span class="placeholder__tag">Плейсхолдер · схема</span>
+            <p>Структурная или принципиальная схема.</p>
+          </div>
+          <div class="placeholder collage__item">
+            <span class="placeholder__tag">Плейсхолдер · сборка</span>
+            <p>Спецификация, фото сборки, 3D-модель.</p>
+          </div>
         </div>
       </div>
     </section>
