@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/css/project.css">
   <script src="assets/js/concept-init.js"></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lightbox.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -667,6 +668,34 @@
       </div>
     </div>
   </footer>
+
+  <!-- Gallery lightbox (assets/js/lightbox.js) -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-describedby="lightbox-counter" hidden data-lightbox-dialog>
+    <div class="lightbox__frame" data-lightbox-backdrop>
+      <div class="lightbox__bar">
+        <span class="lightbox__counter" id="lightbox-counter" data-lightbox-counter></span>
+        <button class="lightbox__btn lightbox__close" type="button" data-lightbox-close aria-label="Закрыть просмотр">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 4l12 12M16 4L4 16"/></svg>
+        </button>
+      </div>
+      <figure class="lightbox__figure" data-lightbox-backdrop>
+        <div class="lightbox__media grid-surface" data-lightbox-media></div>
+        <figcaption class="lightbox__caption" id="lightbox-title" aria-live="polite">
+          <span class="lightbox__title" data-lightbox-title></span>
+          <span class="lightbox__sub" data-lightbox-sub></span>
+        </figcaption>
+      </figure>
+      <div class="lightbox__nav">
+        <button class="lightbox__btn" type="button" data-lightbox-prev aria-label="Предыдущее изображение">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M12 4L6 10l6 6"/></svg>
+        </button>
+        <span class="lightbox__hint" aria-hidden="true">← → листать · Esc закрыть</span>
+        <button class="lightbox__btn" type="button" data-lightbox-next aria-label="Следующее изображение">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 4l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <button class="concept-switch" type="button" data-concept-toggle hidden aria-label="Переключить концепцию оформления">
     <span class="concept-switch__word" aria-hidden="true">Концепция</span>
