@@ -1,6 +1,6 @@
 /*
  * Shared behaviour for every page:
- *   - concept switcher A/B (button in the corner)
+ *   - concept switcher A/B (button in the "prototype" strip above the header)
  *   - keeps the concept across page transitions: internal links get ?c=<concept>
  *     and the choice is stored in localStorage (both, so it survives even when
  *     storage is blocked)

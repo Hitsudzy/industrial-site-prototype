@@ -48,6 +48,7 @@
   --container: 76rem;
   --gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
   --header-h: 4.5rem;
+  --proto-bar-h: 2.75rem;              /* prototype strip with the A/B switcher */
 
   /* Motion */
   --dur-fast: 150ms;

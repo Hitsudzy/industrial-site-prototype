@@ -19,6 +19,16 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div class="proto-bar theme-inverse">
+    <div class="container proto-bar__inner">
+      <p class="proto-bar__note">Прототип<span class="proto-bar__hint"> сайта · две концепции оформления</span></p>
+      <button class="concept-switch" type="button" data-concept-toggle hidden aria-label="Переключить концепцию оформления">
+        <span class="concept-switch__word" aria-hidden="true">Концепция</span>
+        <span class="concept-switch__opt is-active" data-concept-opt="a" aria-hidden="true">A</span>
+        <span class="concept-switch__opt" data-concept-opt="b" aria-hidden="true">B</span>
+      </button>
+    </div>
+  </div>
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -548,11 +558,6 @@
     </div>
   </footer>
 
-  <button class="concept-switch" type="button" data-concept-toggle hidden aria-label="Переключить концепцию оформления">
-    <span class="concept-switch__word" aria-hidden="true">Концепция</span>
-    <span class="concept-switch__opt is-active" data-concept-opt="a" aria-hidden="true">A</span>
-    <span class="concept-switch__opt" data-concept-opt="b" aria-hidden="true">B</span>
-  </button>
   <div class="visually-hidden" role="status" aria-live="polite" data-concept-status></div>
 </body>
 </html>

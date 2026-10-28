@@ -334,9 +334,6 @@ a:hover {
   .brand__name {
     font-size: var(--fs-base);
   }
-  .concept-switch__word {
-    display: none;
-  }
 }
 
 /* ---------- Sections ---------- */
@@ -392,7 +389,7 @@ a:hover {
   background: var(--hero-bg);
   color: var(--color-text);
   padding-block: clamp(4rem, 3rem + 6vw, 8rem);
-  min-height: min(48rem, calc(100vh - var(--header-h)));
+  min-height: min(48rem, calc(100vh - var(--header-h) - var(--proto-bar-h)));
   display: flex;
   align-items: center;
 }
@@ -668,41 +665,72 @@ a:hover {
   color: var(--color-text-muted);
 }
 
-/* ---------- Concept switcher (fixed corner button) ---------- */
+/* ---------- Prototype bar with the concept switcher ----------
+   A thin strip above the header, in the normal flow: it scrolls away with the page
+   and never covers content (a fixed corner button used to hide the footer line). */
+.proto-bar {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--fs-xs);
+}
+.proto-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: var(--proto-bar-h);
+}
+.proto-bar__note {
+  font-family: var(--font-label);
+  letter-spacing: var(--label-tracking);
+  text-transform: var(--label-transform);
+}
 .concept-switch {
-  position: fixed;
-  right: max(var(--space-4), env(safe-area-inset-right));
-  bottom: max(var(--space-4), env(safe-area-inset-bottom));
-  z-index: 90;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  min-height: 2.75rem;
-  padding: var(--space-2) var(--space-4);
+  flex-shrink: 0;
+  min-height: 2.25rem;
+  padding: 0.125rem 0.125rem 0.125rem var(--space-3);
   border: 1px solid var(--color-accent);
   border-radius: 999px;
   background: var(--color-surface);
   color: var(--color-text);
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: var(--fs-xs);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  letter-spacing: var(--label-tracking);
+  text-transform: var(--label-transform);
   cursor: pointer;
+}
+.concept-switch[hidden] {
+  display: none;
 }
 .concept-switch:hover {
   background: var(--color-surface-2);
 }
+.concept-switch__word {
+  margin-right: var(--space-1);
+}
 .concept-switch__opt {
   display: inline-grid;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.875rem;
+  height: 1.875rem;
   border-radius: 50%;
+  font-family: var(--font-mono);
   font-weight: 500;
+  letter-spacing: 0;
   color: var(--color-text-muted);
 }
 .concept-switch__opt.is-active {
   background: var(--color-accent);
   color: var(--color-on-accent);
+}
+@media (max-width: 599.98px) {
+  .proto-bar__hint {
+    display: none;
+  }
 }
 
 /* Smooth theme change; switched off for reduced motion below */
