@@ -188,7 +188,7 @@ def cabinet_svg(concept):
         pal = PAL_A
         out.append(f"<defs>{tick_marker('#5fdde8')}</defs>")
         out.append(cabinet(ox, oy, w, d, h, pal))
-        dc, tc = "#5fdde8", "#9fb0c4"
+        dc, tc = "#5fdde8", "#c4d2e2"
         # extension lines
         ext = []
         for x, y, z, dx, dy in ((0, 0, 0, 0, -26), (w, 0, 0, 0, -26), (w, 0, 0, 26, 0), (w, d, 0, 26, 0)):
@@ -200,9 +200,9 @@ def cabinet_svg(concept):
             b = iso(ox, oy, x - 26, 0, z)
             ext.append(f'<line x1="{f(a[0])}" y1="{f(a[1])}" x2="{f(b[0])}" y2="{f(b[1])}" stroke="{dc}" stroke-width="0.6" opacity="0.7"/>')
         out.extend(ext)
-        out.append(dim_line(iso(ox, oy, 0, -20, 0), iso(ox, oy, w, -20, 0), "800", 30, dc, tc, offset=(-5, 11)))
-        out.append(dim_line(iso(ox, oy, w + 20, 0, 0), iso(ox, oy, w + 20, d, 0), "600", -30, dc, tc, offset=(5, 11)))
-        out.append(dim_line(iso(ox, oy, -20, 0, 0), iso(ox, oy, -20, 0, h), "2000", -90, dc, tc, offset=(-6, 0)))
+        out.append(dim_line(iso(ox, oy, 0, -20, 0), iso(ox, oy, w, -20, 0), "800", 30, dc, tc, offset=(-5, 12), size=11))
+        out.append(dim_line(iso(ox, oy, w + 20, 0, 0), iso(ox, oy, w + 20, d, 0), "600", -30, dc, tc, offset=(5, 12), size=11))
+        out.append(dim_line(iso(ox, oy, -20, 0, 0), iso(ox, oy, -20, 0, h), "2000", -90, dc, tc, offset=(-7, 0), size=11))
         out.append(f'<text x="{vw - 8}" y="18" text-anchor="end" fill="{tc}" font-family="{MONO}" font-size="9" letter-spacing="0.12em">ШУ-01 · ИЗОМЕТРИЯ</text>')
         label = "Условная изометрия электротехнического шкафа с размерами"
     else:
@@ -265,11 +265,13 @@ def hero_a():
     out.append('<g opacity="0.6">')
     a, b = iso(ox, oy, 0, -34, 0), iso(ox, oy, n * w, -34, 0)
     out.append(dim_line(a, b, f"{n * 800}", 30, dc, tc, offset=(-7, 15), size=13))
-    a, b = iso(ox, oy, -30, 0, 0), iso(ox, oy, -30, 0, h)
-    out.append(dim_line(a, b, "2000", -90, dc, tc, offset=(-9, 0), size=13))
+    # height on the far (right) end, clear of the sign that sits over the left part
+    a, b = iso(ox, oy, n * w, d + 30, 0), iso(ox, oy, n * w, d + 30, h)
+    out.append(dim_line(a, b, "2000", -90, dc, tc, offset=(11, 0), size=13))
     for i in range(n):
         sx, sy = iso(ox, oy, i * w + w * 0.5, 0, h * 0.8)
-        lx, ly = sx - 40 + i * 6, oy - h - 150 + i * 28
+        # labels start at y ~ 190: a wide hero crops the top ~130 units of the viewBox
+        lx, ly = sx - 40 + i * 6, oy - h - 90 + i * 26
         out.append(f'<path d="M{f(sx)} {f(sy)}L{f(sx)} {f(ly + 6)}H{f(lx + 70)}" fill="none" stroke="{dc}" stroke-width="0.8"/>'
                    f'<circle cx="{f(sx)}" cy="{f(sy)}" r="2.5" fill="{dc}"/>'
                    f'<text x="{f(sx + 4)}" y="{f(ly)}" fill="{tc}" font-family="{MONO}" font-size="12" letter-spacing="0.1em">ШУ-0{i + 1}</text>')
