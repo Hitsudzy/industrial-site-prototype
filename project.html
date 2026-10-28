@@ -161,26 +161,430 @@
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">02 / Галерея</span>
-          <h2 id="gallery-title">Галерея</h2>
+          <h2 id="gallery-title">Документация и сборка</h2>
+          <p class="section__lead">Иллюстрации условные и нарисованы кодом: настоящая документация проекта не публикуется. Нажмите на изображение, чтобы открыть его крупно.</p>
         </div>
-        <div class="collage">
-          <figure class="collage__item collage__item--main">
-            <div class="collage__media">
-              <!-- One drawing per concept (assets/img, tools/gen_art.py); CSS shows the active one -->
-              <img class="only-a" src="assets/img/cabinet-a.svg" width="270" height="470" loading="lazy" decoding="async" alt="Условная изометрия шкафа управления с размерами: корпус, дверь с панелью оператора, индикаторы и модули на DIN-рейках">
-              <img class="only-b" src="assets/img/cabinet-b.svg" width="270" height="470" loading="lazy" decoding="async" alt="Условная изометрия шкафа управления: корпус, дверь с панелью оператора, индикаторы и модули на DIN-рейках">
-            </div>
-            <figcaption class="collage__caption">Шкаф управления, изометрия. Иллюстрация нарисована кодом.</figcaption>
-          </figure>
-          <div class="placeholder collage__item">
-            <span class="placeholder__tag">Плейсхолдер · схема</span>
-            <p>Структурная или принципиальная схема.</p>
-          </div>
-          <div class="placeholder collage__item">
-            <span class="placeholder__tag">Плейсхолдер · сборка</span>
-            <p>Спецификация, фото сборки, 3D-модель.</p>
-          </div>
-        </div>
+        <ul class="gallery" role="list" data-lightbox>
+          <li class="gallery__item gallery__item--cabinet">
+            <figure class="gallery__figure frame-ticks">
+              <button class="gallery__open" type="button" data-lightbox-item aria-haspopup="dialog" aria-label="Открыть крупно: Шкаф управления, изометрия корпуса">
+                <span class="gallery__media grid-surface">
+                <!-- One drawing per concept (assets/img, tools/gen_art.py); CSS shows the active one -->
+                <img class="only-a" src="assets/img/cabinet-a.svg" width="270" height="470" loading="lazy" decoding="async" alt="Условная изометрия шкафа управления с размерами: корпус, дверь с панелью оператора, индикаторы и модули на DIN-рейках">
+                <img class="only-b" src="assets/img/cabinet-b.svg" width="270" height="470" loading="lazy" decoding="async" alt="Условная изометрия шкафа управления: корпус, дверь с панелью оператора, индикаторы и модули на DIN-рейках">
+                </span>
+                <span class="gallery__zoom" aria-hidden="true"></span>
+              </button>
+              <figcaption class="gallery__caption"><span class="gallery__no" aria-hidden="true">01</span><span class="gallery__title">Шкаф управления</span> <span class="gallery__sub">— изометрия корпуса</span></figcaption>
+            </figure>
+          </li>
+          <li class="gallery__item gallery__item--schema">
+            <figure class="gallery__figure frame-ticks">
+              <button class="gallery__open" type="button" data-lightbox-item aria-haspopup="dialog" aria-label="Открыть крупно: Фрагмент схемы, однолинейная и функциональная часть">
+                <span class="gallery__media grid-surface">
+                <!-- gen:schema -->
+                <svg class="art" viewBox="0 0 480 280" role="img" aria-label="Фрагмент условной однолинейной и функциональной схемы: шина, фидеры с аппаратами защиты, функциональные блоки. Обозначения нечитаемые" focusable="false">
+                  <rect class="art__sheet" x="8" y="8" width="464" height="264"/>
+                  <path class="cover__thin" d="M20 20h440v240H20z"/>
+                  <path class="cover__line cover__line--accent" d="M40 52h272"/>
+                  <circle class="cover__dot" cx="64" cy="52" r="3"/>
+                  <path class="cover__line" d="M64 52v20M64 96v20"/>
+                  <rect class="cover__node" x="56" y="72" width="16" height="24"/>
+                  <path class="cover__thin" d="M59 92l10-16"/>
+                  <path class="cover__line" d="M55 116h18M55 124h18M64 124v22"/>
+                  <rect class="art__bar" x="76" y="78" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="76" y="86" width="9" height="4" rx="1"/>
+                  <circle class="cover__line" cx="64" cy="166" r="19"/>
+                  <path class="cover__thin" d="M56 172l8-12 8 12"/>
+                  <path class="cover__line" d="M64 185v25"/>
+                  <path class="cover__thin" d="M55 210h18M58 215h12M61 220h6"/>
+                  <circle class="cover__dot" cx="128" cy="52" r="3"/>
+                  <path class="cover__line" d="M128 52v20M128 96v20"/>
+                  <rect class="cover__node" x="120" y="72" width="16" height="24"/>
+                  <path class="cover__thin" d="M123 92l10-16"/>
+                  <path class="cover__line" d="M119 116h18M119 124h18M128 124v22"/>
+                  <rect class="art__bar" x="140" y="78" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="140" y="86" width="9" height="4" rx="1"/>
+                  <circle class="cover__line" cx="128" cy="160" r="13"/>
+                  <circle class="cover__line" cx="128" cy="178" r="13"/>
+                  <path class="cover__line" d="M128 191v19"/>
+                  <path class="cover__thin" d="M119 210h18M122 215h12M125 220h6"/>
+                  <circle class="cover__dot" cx="192" cy="52" r="3"/>
+                  <path class="cover__line" d="M192 52v20M192 96v20"/>
+                  <rect class="cover__node" x="184" y="72" width="16" height="24"/>
+                  <path class="cover__thin" d="M187 92l10-16"/>
+                  <path class="cover__line" d="M183 116h18M183 124h18M192 124v22"/>
+                  <rect class="art__bar" x="204" y="78" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="204" y="86" width="9" height="4" rx="1"/>
+                  <circle class="cover__line" cx="192" cy="166" r="19"/>
+                  <path class="cover__thin" d="M184 172l8-12 8 12"/>
+                  <path class="cover__line" d="M192 185v25"/>
+                  <path class="cover__thin" d="M183 210h18M186 215h12M189 220h6"/>
+                  <circle class="cover__dot" cx="256" cy="52" r="3"/>
+                  <path class="cover__line" d="M256 52v20M256 96v20"/>
+                  <rect class="cover__node" x="248" y="72" width="16" height="24"/>
+                  <path class="cover__thin" d="M251 92l10-16"/>
+                  <path class="cover__line" d="M247 116h18M247 124h18M256 124v22"/>
+                  <rect class="art__bar" x="268" y="78" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="268" y="86" width="9" height="4" rx="1"/>
+                  <circle class="cover__line" cx="256" cy="166" r="19"/>
+                  <path class="cover__thin" d="M248 172l8-12 8 12"/>
+                  <path class="cover__line" d="M256 185v25"/>
+                  <path class="cover__thin" d="M247 210h18M250 215h12M253 220h6"/>
+                  <rect class="art__module" x="352" y="40" width="92" height="34"/>
+                  <rect class="art__bar" x="362" y="50" width="52" height="4" rx="1"/>
+                  <rect class="art__bar" x="362" y="60" width="34" height="4" rx="1"/>
+                  <path class="cover__line" d="M398.0 74v26"/>
+                  <path class="cover__line" d="M394.0 94l4 6 4-6"/>
+                  <rect class="cover__node" x="352" y="100" width="92" height="34"/>
+                  <rect class="art__bar" x="362" y="110" width="52" height="4" rx="1"/>
+                  <rect class="art__bar" x="362" y="120" width="34" height="4" rx="1"/>
+                  <path class="cover__line" d="M398.0 134v26"/>
+                  <path class="cover__line" d="M394.0 154l4 6 4-6"/>
+                  <rect class="art__module" x="352" y="160" width="92" height="34"/>
+                  <rect class="art__bar" x="362" y="170" width="52" height="4" rx="1"/>
+                  <rect class="art__bar" x="362" y="180" width="34" height="4" rx="1"/>
+                  <path class="cover__axis" d="M312 52h40M352 117h-24v60H286"/>
+                  <path class="cover__thin" d="M340 222h120M340 222v38M392 222v38M340 241h120"/>
+                  <rect class="art__bar" x="348" y="229" width="30" height="4" rx="1"/>
+                  <rect class="art__bar" x="400" y="229" width="48" height="4" rx="1"/>
+                  <rect class="art__bar" x="400" y="248" width="30" height="4" rx="1"/>
+                </svg>
+                <!-- /gen:schema -->
+                </span>
+                <span class="gallery__zoom" aria-hidden="true"></span>
+              </button>
+              <figcaption class="gallery__caption"><span class="gallery__no" aria-hidden="true">02</span><span class="gallery__title">Фрагмент схемы</span> <span class="gallery__sub">— однолинейная и функциональная часть</span></figcaption>
+            </figure>
+          </li>
+          <li class="gallery__item gallery__item--spec">
+            <figure class="gallery__figure frame-ticks">
+              <button class="gallery__open" type="button" data-lightbox-item aria-haspopup="dialog" aria-label="Открыть крупно: Спецификация, таблица изделий">
+                <span class="gallery__media grid-surface">
+                <!-- gen:spec -->
+                <svg class="art" viewBox="0 0 320 300" role="img" aria-label="Условная спецификация: таблица с полосами-заглушками вместо текста, нижняя часть заштрихована" focusable="false">
+                  <rect class="art__sheet" x="16" y="16" width="288" height="268"/>
+                  <rect class="art__fill" x="16" y="16" width="288" height="30"/>
+                  <rect class="cover__line" x="16" y="16" width="288" height="268"/>
+                  <path class="cover__thin" d="M44 16V284M168 16V284M224 16V284M262 16V284"/>
+                  <path class="cover__thin" d="M16 46H304M16 68H304M16 90H304M16 112H304M16 134H304M16 156H304M16 178H304M16 200H304M16 222H304M16 244H304M16 266H304"/>
+                  <rect class="art__bar art__bar--accent" x="22" y="29" width="16" height="4" rx="1"/>
+                  <rect class="art__bar art__bar--accent" x="50" y="29" width="40" height="4" rx="1"/>
+                  <rect class="art__bar art__bar--accent" x="174" y="29" width="40" height="4" rx="1"/>
+                  <rect class="art__bar art__bar--accent" x="230" y="29" width="26" height="4" rx="1"/>
+                  <rect class="art__bar art__bar--accent" x="268" y="29" width="30" height="4" rx="1"/>
+                  <rect class="art__bar" x="22" y="55" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="50" y="55" width="96" height="4" rx="1"/>
+                  <rect class="art__bar" x="174" y="55" width="30" height="4" rx="1"/>
+                  <rect class="art__bar" x="230" y="55" width="16" height="4" rx="1"/>
+                  <rect class="art__bar" x="268" y="55" width="22" height="4" rx="1"/>
+                  <rect class="art__bar" x="22" y="77" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="50" y="77" width="70" height="4" rx="1"/>
+                  <rect class="art__bar" x="174" y="77" width="37" height="4" rx="1"/>
+                  <rect class="art__bar" x="230" y="77" width="21" height="4" rx="1"/>
+                  <rect class="art__bar" x="268" y="77" width="22" height="4" rx="1"/>
+                  <rect class="art__bar" x="22" y="99" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="50" y="99" width="108" height="4" rx="1"/>
+                  <rect class="art__bar" x="174" y="99" width="44" height="4" rx="1"/>
+                  <rect class="art__bar" x="230" y="99" width="16" height="4" rx="1"/>
+                  <rect class="art__bar" x="268" y="99" width="22" height="4" rx="1"/>
+                  <rect class="art__bar" x="22" y="121" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="50" y="121" width="84" height="4" rx="1"/>
+                  <rect class="art__bar" x="174" y="121" width="33" height="4" rx="1"/>
+                  <rect class="art__bar" x="230" y="121" width="21" height="4" rx="1"/>
+                  <rect class="art__bar" x="268" y="121" width="22" height="4" rx="1"/>
+                  <rect class="art__bar" x="22" y="143" width="14" height="4" rx="1"/>
+                  <rect class="art__bar" x="50" y="143" width="60" height="4" rx="1"/>
+                  <rect class="art__bar" x="174" y="143" width="40" height="4" rx="1"/>
+                  <rect class="art__bar" x="230" y="143" width="16" height="4" rx="1"/>
+                  <rect class="art__bar" x="268" y="143" width="22" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="22" y="165" width="14" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="50" y="165" width="100" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="174" y="165" width="47" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="230" y="165" width="21" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="268" y="165" width="22" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="22" y="187" width="14" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="50" y="187" width="76" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="174" y="187" width="36" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="230" y="187" width="16" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="268" y="187" width="22" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="22" y="209" width="14" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="50" y="209" width="92" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="174" y="209" width="43" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="230" y="209" width="21" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="268" y="209" width="22" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="22" y="231" width="14" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="50" y="231" width="66" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="174" y="231" width="32" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="230" y="231" width="16" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="268" y="231" width="22" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="22" y="253" width="14" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="50" y="253" width="104" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="174" y="253" width="39" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="230" y="253" width="21" height="4" rx="1"/>
+                  <rect class="art__bar art__blur" x="268" y="253" width="22" height="4" rx="1"/>
+                  <path class="art__hatch" d="M20 282l36-126M29 282l36-126M38 282l36-126M47 282l36-126M56 282l36-126M65 282l36-126M74 282l36-126M83 282l36-126M92 282l36-126M101 282l36-126M110 282l36-126M119 282l36-126M128 282l36-126M137 282l36-126M146 282l36-126M155 282l36-126M164 282l36-126M173 282l36-126M182 282l36-126M191 282l36-126M200 282l36-126M209 282l36-126M218 282l36-126M227 282l36-126M236 282l36-126M245 282l36-126M254 282l36-126M263 282l36-126"/>
+                </svg>
+                <!-- /gen:spec -->
+                </span>
+                <span class="gallery__zoom" aria-hidden="true"></span>
+              </button>
+              <figcaption class="gallery__caption"><span class="gallery__no" aria-hidden="true">03</span><span class="gallery__title">Спецификация</span> <span class="gallery__sub">— таблица изделий</span></figcaption>
+            </figure>
+          </li>
+          <li class="gallery__item gallery__item--list">
+            <figure class="gallery__figure frame-ticks">
+              <button class="gallery__open" type="button" data-lightbox-item aria-haspopup="dialog" aria-label="Открыть крупно: Перечень элементов, позиции по схеме">
+                <span class="gallery__media grid-surface">
+                <!-- gen:list -->
+                <svg class="art" viewBox="0 0 320 300" role="img" aria-label="Условный перечень: строки-заглушки с номерами позиций без читаемого текста" focusable="false">
+                  <rect class="art__sheet" x="16" y="16" width="288" height="268"/>
+                  <rect class="cover__line" x="16" y="16" width="288" height="268"/>
+                  <path class="cover__thin" d="M16 52h288"/>
+                  <rect class="art__bar art__bar--accent" x="30" y="30" width="120" height="6" rx="1"/>
+                  <rect class="art__bar" x="236" y="31" width="54" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="66" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="70" width="150" height="4" rx="1"/>
+                  <rect class="art__bar" x="276" y="70" width="14" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="87" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="91" width="118" height="4" rx="1"/>
+                  <rect class="art__bar" x="270" y="91" width="20" height="4" rx="1"/>
+                  <rect class="cover__dot" x="33" y="90" width="8" height="6" rx="1"/>
+                  <rect class="art__module" x="30" y="108" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="112" width="170" height="4" rx="1"/>
+                  <rect class="art__bar" x="264" y="112" width="26" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="129" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="133" width="96" height="4" rx="1"/>
+                  <rect class="art__bar" x="276" y="133" width="14" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="150" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="154" width="140" height="4" rx="1"/>
+                  <rect class="art__bar" x="270" y="154" width="20" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="171" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="175" width="160" height="4" rx="1"/>
+                  <rect class="art__bar" x="264" y="175" width="26" height="4" rx="1"/>
+                  <rect class="cover__dot" x="33" y="174" width="8" height="6" rx="1"/>
+                  <rect class="art__module" x="30" y="192" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="196" width="108" height="4" rx="1"/>
+                  <rect class="art__bar" x="276" y="196" width="14" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="213" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="217" width="134" height="4" rx="1"/>
+                  <rect class="art__bar" x="270" y="217" width="20" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="234" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="238" width="88" height="4" rx="1"/>
+                  <rect class="art__bar" x="264" y="238" width="26" height="4" rx="1"/>
+                  <rect class="art__module" x="30" y="255" width="14" height="12" rx="1"/>
+                  <rect class="art__bar" x="54" y="259" width="152" height="4" rx="1"/>
+                  <rect class="art__bar" x="276" y="259" width="14" height="4" rx="1"/>
+                  <rect class="cover__dot" x="33" y="258" width="8" height="6" rx="1"/>
+                </svg>
+                <!-- /gen:list -->
+                </span>
+                <span class="gallery__zoom" aria-hidden="true"></span>
+              </button>
+              <figcaption class="gallery__caption"><span class="gallery__no" aria-hidden="true">04</span><span class="gallery__title">Перечень элементов</span> <span class="gallery__sub">— позиции по схеме</span></figcaption>
+            </figure>
+          </li>
+          <li class="gallery__item gallery__item--assembly">
+            <figure class="gallery__figure frame-ticks">
+              <button class="gallery__open" type="button" data-lightbox-item aria-haspopup="dialog" aria-label="Открыть крупно: 3D-сборка, ряд шкафов с кабельным лотком">
+                <span class="gallery__media grid-surface">
+                <!-- gen:assembly -->
+                <svg class="art" viewBox="0 0 480 330" role="img" aria-label="Условная 3D-сборка: изометрия ряда из четырёх шкафов с кабельным лотком сверху, один шкаф выделен" focusable="false">
+                  <path class="cover__dim" d="M80.9 187L302.6 315"/>
+                  <path class="cover__dim" d="M86.1 184L75.8 190"/>
+                  <path class="cover__dim" d="M307.8 312L297.5 318"/>
+                  <polygon class="art__fill cover__line" points="100,44 155.4,76 197,52 141.6,20"/>
+                  <polygon class="art__face cover__line" points="100,176 155.4,208 155.4,76 100,44"/>
+                  <g transform="matrix(0.8660254 0.5 0 1 100 44)">
+                    <rect class="cover__thin" x="4" y="4" width="56" height="114"/>
+                    <rect class="art__fill" x="0" y="122" width="64" height="10"/>
+                    <rect class="cover__line" x="52" y="46" width="3" height="16"/>
+                    <rect class="cover__node" x="12" y="18" width="30" height="20"/>
+                    <path class="cover__thin" d="M14 92h34M14 97h34M14 102h34M14 107h34"/>
+                  </g>
+                  <polygon class="art__fill cover__line cover__line--accent" points="155.4,76 210.9,108 252.4,84 197,52"/>
+                  <polygon class="art__face cover__line cover__line--accent" points="155.4,208 210.9,240 210.9,108 155.4,76"/>
+                  <g transform="matrix(0.8660254 0.5 0 1 155.4 76)">
+                    <rect class="cover__thin" x="4" y="4" width="56" height="114"/>
+                    <rect class="art__fill" x="0" y="122" width="64" height="10"/>
+                    <rect class="cover__line" x="52" y="46" width="3" height="16"/>
+                    <circle class="cover__dot" cx="14" cy="24" r="2.2"/><circle class="cover__dot" cx="23" cy="24" r="2.2"/><circle class="cover__dot" cx="32" cy="24" r="2.2"/>
+                    <path class="cover__thin" d="M14 92h34M14 97h34M14 102h34M14 107h34"/>
+                  </g>
+                  <polygon class="art__fill cover__line" points="210.9,108 266.3,140 307.8,116 252.4,84"/>
+                  <polygon class="art__face cover__line" points="210.9,240 266.3,272 266.3,140 210.9,108"/>
+                  <g transform="matrix(0.8660254 0.5 0 1 210.9 108)">
+                    <rect class="cover__thin" x="4" y="4" width="56" height="114"/>
+                    <rect class="art__fill" x="0" y="122" width="64" height="10"/>
+                    <rect class="cover__line" x="52" y="46" width="3" height="16"/>
+                    <circle class="cover__dot" cx="14" cy="24" r="2.2"/><circle class="cover__dot" cx="23" cy="24" r="2.2"/><circle class="cover__dot" cx="32" cy="24" r="2.2"/>
+                    <path class="cover__thin" d="M14 92h34M14 97h34M14 102h34M14 107h34"/>
+                  </g>
+                  <polygon class="art__fill cover__line" points="266.3,140 321.7,172 363.3,148 307.8,116"/>
+                  <polygon class="art__face cover__line" points="266.3,272 321.7,304 321.7,172 266.3,140"/>
+                  <g transform="matrix(0.8660254 0.5 0 1 266.3 140)">
+                    <rect class="cover__thin" x="4" y="4" width="56" height="114"/>
+                    <rect class="art__fill" x="0" y="122" width="64" height="10"/>
+                    <rect class="cover__line" x="52" y="46" width="3" height="16"/>
+                    <circle class="cover__dot" cx="14" cy="24" r="2.2"/><circle class="cover__dot" cx="23" cy="24" r="2.2"/><circle class="cover__dot" cx="32" cy="24" r="2.2"/>
+                    <path class="cover__thin" d="M14 92h34M14 97h34M14 102h34M14 107h34"/>
+                  </g>
+                  <polygon class="art__side cover__line" points="321.7,304 363.3,280 363.3,148 321.7,172"/>
+                  <g transform="matrix(0.8660254 -0.5 0 1 321.7 172)">
+                    <rect class="art__fill" x="0" y="122" width="48" height="10"/>
+                    <path class="cover__thin" d="M10 20h28M10 26h28M10 32h28M10 38h28"/>
+                  </g>
+                  <polygon class="art__face cover__line" points="108.7,39 330.4,167 330.4,159 108.7,31"/>
+                  <polygon class="art__fill cover__line" points="108.7,31 330.4,159 351.1,147 129.4,19"/>
+                  <polygon class="art__side cover__line" points="330.4,167 351.1,155 351.1,147 330.4,159"/>
+                  <path class="cover__thin" d="M122.5 39L143.3 27M136.4 47L157.2 35M150.2 55L171 43M164.1 63L184.9 51M177.9 71L198.7 59M191.8 79L212.6 67M205.7 87L226.4 75M219.5 95L240.3 83M233.4 103L254.2 91M247.2 111L268 99M261.1 119L281.9 107M274.9 127L295.7 115M288.8 135L309.6 123M302.6 143L323.4 131M316.5 151L337.3 139"/>
+                  <path class="cover__axis" d="M183.1 242L183.1 62"/>
+                </svg>
+                <!-- /gen:assembly -->
+                </span>
+                <span class="gallery__zoom" aria-hidden="true"></span>
+              </button>
+              <figcaption class="gallery__caption"><span class="gallery__no" aria-hidden="true">05</span><span class="gallery__title">3D-сборка</span> <span class="gallery__sub">— ряд шкафов с кабельным лотком</span></figcaption>
+            </figure>
+          </li>
+          <li class="gallery__item gallery__item--panel">
+            <figure class="gallery__figure frame-ticks">
+              <button class="gallery__open" type="button" data-lightbox-item aria-haspopup="dialog" aria-label="Открыть крупно: Монтажная панель, модули на DIN-рейках">
+                <span class="gallery__media grid-surface">
+                <!-- gen:panel -->
+                <svg class="art" viewBox="0 0 360 300" role="img" aria-label="Условная монтажная панель: автоматы, блок питания, реле, контроллер и модули ввода-вывода на DIN-рейках между кабель-каналами, ряд клемм" focusable="false">
+                  <rect class="art__fill" x="20" y="20" width="320" height="260" rx="3"/>
+                  <rect class="cover__line" x="20" y="20" width="320" height="260" rx="3"/>
+                  <circle class="cover__thin" cx="29" cy="29" r="3.5"/>
+                  <circle class="cover__thin" cx="331" cy="29" r="3.5"/>
+                  <circle class="cover__thin" cx="29" cy="271" r="3.5"/>
+                  <circle class="cover__thin" cx="331" cy="271" r="3.5"/>
+                  <rect class="art__module" x="36" y="34" width="248" height="18"/>
+                  <path class="cover__thin" d="M44 34v5.3999999999999995M44 52v-5.3999999999999995M52 34v5.3999999999999995M52 52v-5.3999999999999995M60 34v5.3999999999999995M60 52v-5.3999999999999995M68 34v5.3999999999999995M68 52v-5.3999999999999995M76 34v5.3999999999999995M76 52v-5.3999999999999995M84 34v5.3999999999999995M84 52v-5.3999999999999995M92 34v5.3999999999999995M92 52v-5.3999999999999995M100 34v5.3999999999999995M100 52v-5.3999999999999995M108 34v5.3999999999999995M108 52v-5.3999999999999995M116 34v5.3999999999999995M116 52v-5.3999999999999995M124 34v5.3999999999999995M124 52v-5.3999999999999995M132 34v5.3999999999999995M132 52v-5.3999999999999995M140 34v5.3999999999999995M140 52v-5.3999999999999995M148 34v5.3999999999999995M148 52v-5.3999999999999995M156 34v5.3999999999999995M156 52v-5.3999999999999995M164 34v5.3999999999999995M164 52v-5.3999999999999995M172 34v5.3999999999999995M172 52v-5.3999999999999995M180 34v5.3999999999999995M180 52v-5.3999999999999995M188 34v5.3999999999999995M188 52v-5.3999999999999995M196 34v5.3999999999999995M196 52v-5.3999999999999995M204 34v5.3999999999999995M204 52v-5.3999999999999995M212 34v5.3999999999999995M212 52v-5.3999999999999995M220 34v5.3999999999999995M220 52v-5.3999999999999995M228 34v5.3999999999999995M228 52v-5.3999999999999995M236 34v5.3999999999999995M236 52v-5.3999999999999995M244 34v5.3999999999999995M244 52v-5.3999999999999995M252 34v5.3999999999999995M252 52v-5.3999999999999995M260 34v5.3999999999999995M260 52v-5.3999999999999995M268 34v5.3999999999999995M268 52v-5.3999999999999995M276 34v5.3999999999999995M276 52v-5.3999999999999995"/>
+                  <rect class="art__module" x="36" y="122" width="248" height="18"/>
+                  <path class="cover__thin" d="M44 122v5.3999999999999995M44 140v-5.3999999999999995M52 122v5.3999999999999995M52 140v-5.3999999999999995M60 122v5.3999999999999995M60 140v-5.3999999999999995M68 122v5.3999999999999995M68 140v-5.3999999999999995M76 122v5.3999999999999995M76 140v-5.3999999999999995M84 122v5.3999999999999995M84 140v-5.3999999999999995M92 122v5.3999999999999995M92 140v-5.3999999999999995M100 122v5.3999999999999995M100 140v-5.3999999999999995M108 122v5.3999999999999995M108 140v-5.3999999999999995M116 122v5.3999999999999995M116 140v-5.3999999999999995M124 122v5.3999999999999995M124 140v-5.3999999999999995M132 122v5.3999999999999995M132 140v-5.3999999999999995M140 122v5.3999999999999995M140 140v-5.3999999999999995M148 122v5.3999999999999995M148 140v-5.3999999999999995M156 122v5.3999999999999995M156 140v-5.3999999999999995M164 122v5.3999999999999995M164 140v-5.3999999999999995M172 122v5.3999999999999995M172 140v-5.3999999999999995M180 122v5.3999999999999995M180 140v-5.3999999999999995M188 122v5.3999999999999995M188 140v-5.3999999999999995M196 122v5.3999999999999995M196 140v-5.3999999999999995M204 122v5.3999999999999995M204 140v-5.3999999999999995M212 122v5.3999999999999995M212 140v-5.3999999999999995M220 122v5.3999999999999995M220 140v-5.3999999999999995M228 122v5.3999999999999995M228 140v-5.3999999999999995M236 122v5.3999999999999995M236 140v-5.3999999999999995M244 122v5.3999999999999995M244 140v-5.3999999999999995M252 122v5.3999999999999995M252 140v-5.3999999999999995M260 122v5.3999999999999995M260 140v-5.3999999999999995M268 122v5.3999999999999995M268 140v-5.3999999999999995M276 122v5.3999999999999995M276 140v-5.3999999999999995"/>
+                  <rect class="art__module" x="36" y="210" width="248" height="18"/>
+                  <path class="cover__thin" d="M44 210v5.3999999999999995M44 228v-5.3999999999999995M52 210v5.3999999999999995M52 228v-5.3999999999999995M60 210v5.3999999999999995M60 228v-5.3999999999999995M68 210v5.3999999999999995M68 228v-5.3999999999999995M76 210v5.3999999999999995M76 228v-5.3999999999999995M84 210v5.3999999999999995M84 228v-5.3999999999999995M92 210v5.3999999999999995M92 228v-5.3999999999999995M100 210v5.3999999999999995M100 228v-5.3999999999999995M108 210v5.3999999999999995M108 228v-5.3999999999999995M116 210v5.3999999999999995M116 228v-5.3999999999999995M124 210v5.3999999999999995M124 228v-5.3999999999999995M132 210v5.3999999999999995M132 228v-5.3999999999999995M140 210v5.3999999999999995M140 228v-5.3999999999999995M148 210v5.3999999999999995M148 228v-5.3999999999999995M156 210v5.3999999999999995M156 228v-5.3999999999999995M164 210v5.3999999999999995M164 228v-5.3999999999999995M172 210v5.3999999999999995M172 228v-5.3999999999999995M180 210v5.3999999999999995M180 228v-5.3999999999999995M188 210v5.3999999999999995M188 228v-5.3999999999999995M196 210v5.3999999999999995M196 228v-5.3999999999999995M204 210v5.3999999999999995M204 228v-5.3999999999999995M212 210v5.3999999999999995M212 228v-5.3999999999999995M220 210v5.3999999999999995M220 228v-5.3999999999999995M228 210v5.3999999999999995M228 228v-5.3999999999999995M236 210v5.3999999999999995M236 228v-5.3999999999999995M244 210v5.3999999999999995M244 228v-5.3999999999999995M252 210v5.3999999999999995M252 228v-5.3999999999999995M260 210v5.3999999999999995M260 228v-5.3999999999999995M268 210v5.3999999999999995M268 228v-5.3999999999999995M276 210v5.3999999999999995M276 228v-5.3999999999999995"/>
+                  <rect class="art__module" x="296" y="34" width="20" height="232"/>
+                  <path class="cover__thin" d="M296 42h6.0M316 42h-6.0M296 50h6.0M316 50h-6.0M296 58h6.0M316 58h-6.0M296 66h6.0M316 66h-6.0M296 74h6.0M316 74h-6.0M296 82h6.0M316 82h-6.0M296 90h6.0M316 90h-6.0M296 98h6.0M316 98h-6.0M296 106h6.0M316 106h-6.0M296 114h6.0M316 114h-6.0M296 122h6.0M316 122h-6.0M296 130h6.0M316 130h-6.0M296 138h6.0M316 138h-6.0M296 146h6.0M316 146h-6.0M296 154h6.0M316 154h-6.0M296 162h6.0M316 162h-6.0M296 170h6.0M316 170h-6.0M296 178h6.0M316 178h-6.0M296 186h6.0M316 186h-6.0M296 194h6.0M316 194h-6.0M296 202h6.0M316 202h-6.0M296 210h6.0M316 210h-6.0M296 218h6.0M316 218h-6.0M296 226h6.0M316 226h-6.0M296 234h6.0M316 234h-6.0M296 242h6.0M316 242h-6.0M296 250h6.0M316 250h-6.0M296 258h6.0M316 258h-6.0"/>
+                  <rect class="art__rail" x="36" y="83" width="248" height="8"/>
+                  <path class="cover__thin" d="M42 86h6M54 86h6M66 86h6M78 86h6M90 86h6M102 86h6M114 86h6M126 86h6M138 86h6M150 86h6M162 86h6M174 86h6M186 86h6M198 86h6M210 86h6M222 86h6M234 86h6M246 86h6M258 86h6M270 86h6"/>
+                  <rect class="art__module" x="44" y="62" width="17" height="50" rx="1.5"/>
+                  <path class="cover__thin" d="M47 68h11M47 106h11"/>
+                  <rect class="cover__line" x="50.5" y="80" width="4" height="10" rx="1"/>
+                  <rect class="art__module" x="62" y="62" width="17" height="50" rx="1.5"/>
+                  <path class="cover__thin" d="M65 68h11M65 106h11"/>
+                  <rect class="cover__line" x="68.5" y="80" width="4" height="10" rx="1"/>
+                  <rect class="art__module" x="80" y="62" width="17" height="50" rx="1.5"/>
+                  <path class="cover__thin" d="M83 68h11M83 106h11"/>
+                  <rect class="cover__line" x="86.5" y="80" width="4" height="10" rx="1"/>
+                  <rect class="art__module" x="98" y="62" width="17" height="50" rx="1.5"/>
+                  <path class="cover__thin" d="M101 68h11M101 106h11"/>
+                  <rect class="cover__line" x="104.5" y="80" width="4" height="10" rx="1"/>
+                  <rect class="art__module" x="116" y="62" width="17" height="50" rx="1.5"/>
+                  <path class="cover__thin" d="M119 68h11M119 106h11"/>
+                  <rect class="cover__line" x="122.5" y="80" width="4" height="10" rx="1"/>
+                  <rect class="art__module" x="142" y="60" width="50" height="54" rx="1.5"/>
+                  <path class="cover__thin" d="M145 66h44M145 108h44"/>
+                  <circle class="cover__dot" cx="148" cy="72" r="1.6"/>
+                  <circle class="cover__dot" cx="154" cy="72" r="1.6"/>
+                  <rect class="art__bar" x="150" y="85" width="30" height="4" rx="1"/>
+                  <rect class="art__bar" x="150" y="93" width="20" height="4" rx="1"/>
+                  <rect class="art__module" x="200" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M203 70h5M203 104h5"/>
+                  <rect class="art__module" x="212" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M215 70h5M215 104h5"/>
+                  <rect class="art__module" x="224" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M227 70h5M227 104h5"/>
+                  <rect class="art__module" x="236" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M239 70h5M239 104h5"/>
+                  <rect class="art__module" x="248" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M251 70h5M251 104h5"/>
+                  <rect class="art__module" x="260" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M263 70h5M263 104h5"/>
+                  <rect class="art__module" x="272" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M275 70h5M275 104h5"/>
+                  <rect class="art__module" x="284" y="64" width="11" height="46" rx="1.5"/>
+                  <path class="cover__thin" d="M287 70h5M287 104h5"/>
+                  <rect class="art__rail" x="36" y="171" width="248" height="8"/>
+                  <path class="cover__thin" d="M42 174h6M54 174h6M66 174h6M78 174h6M90 174h6M102 174h6M114 174h6M126 174h6M138 174h6M150 174h6M162 174h6M174 174h6M186 174h6M198 174h6M210 174h6M222 174h6M234 174h6M246 174h6M258 174h6M270 174h6"/>
+                  <rect class="cover__node" x="44" y="146" width="42" height="58" rx="1.5"/>
+                  <path class="cover__thin" d="M47 152h36M47 198h36"/>
+                  <circle class="cover__dot" cx="50" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="56" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="62" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="68" cy="158" r="1.6"/>
+                  <rect class="cover__node" x="88" y="146" width="22" height="58" rx="1.5"/>
+                  <path class="cover__thin" d="M91 152h16M91 198h16"/>
+                  <circle class="cover__dot" cx="94" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="100" cy="158" r="1.6"/>
+                  <rect class="cover__node" x="111" y="146" width="22" height="58" rx="1.5"/>
+                  <path class="cover__thin" d="M114 152h16M114 198h16"/>
+                  <circle class="cover__dot" cx="117" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="123" cy="158" r="1.6"/>
+                  <rect class="cover__node" x="134" y="146" width="22" height="58" rx="1.5"/>
+                  <path class="cover__thin" d="M137 152h16M137 198h16"/>
+                  <circle class="cover__dot" cx="140" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="146" cy="158" r="1.6"/>
+                  <rect class="cover__node" x="157" y="146" width="22" height="58" rx="1.5"/>
+                  <path class="cover__thin" d="M160 152h16M160 198h16"/>
+                  <circle class="cover__dot" cx="163" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="169" cy="158" r="1.6"/>
+                  <rect class="cover__node" x="180" y="146" width="22" height="58" rx="1.5"/>
+                  <path class="cover__thin" d="M183 152h16M183 198h16"/>
+                  <circle class="cover__dot" cx="186" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="192" cy="158" r="1.6"/>
+                  <rect class="cover__node" x="203" y="146" width="22" height="58" rx="1.5"/>
+                  <path class="cover__thin" d="M206 152h16M206 198h16"/>
+                  <circle class="cover__dot" cx="209" cy="158" r="1.6"/>
+                  <circle class="cover__dot" cx="215" cy="158" r="1.6"/>
+                  <rect class="art__module" x="234" y="148" width="34" height="54" rx="1.5"/>
+                  <path class="cover__thin" d="M237 154h28M237 196h28"/>
+                  <circle class="cover__dot" cx="240" cy="160" r="1.6"/>
+                  <circle class="cover__dot" cx="246" cy="160" r="1.6"/>
+                  <circle class="cover__dot" cx="252" cy="160" r="1.6"/>
+                  <rect class="art__rail" x="36" y="246" width="248" height="8"/>
+                  <path class="cover__thin" d="M42 249h6M54 249h6M66 249h6M78 249h6M90 249h6M102 249h6M114 249h6M126 249h6M138 249h6M150 249h6M162 249h6M174 249h6M186 249h6M198 249h6M210 249h6M222 249h6M234 249h6M246 249h6M258 249h6M270 249h6"/>
+                  <rect class="art__module" x="44" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="51" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="58" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__bar--accent art__term" x="65" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__bar--accent art__term" x="72" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="79" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="86" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="93" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="100" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="107" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="114" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="121" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="128" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__bar--accent art__term" x="135" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__bar--accent art__term" x="142" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="149" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="156" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="163" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="170" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="177" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="184" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="191" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="198" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__bar--accent art__term" x="205" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__bar--accent art__term" x="212" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="219" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="226" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="233" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="240" y="236" width="6" height="28" rx="1"/>
+                  <rect class="art__module" x="247" y="236" width="6" height="28" rx="1"/>
+                  <rect class="cover__line" x="256" y="234" width="5" height="32" rx="1"/>
+                </svg>
+                <!-- /gen:panel -->
+                </span>
+                <span class="gallery__zoom" aria-hidden="true"></span>
+              </button>
+              <figcaption class="gallery__caption"><span class="gallery__no" aria-hidden="true">06</span><span class="gallery__title">Монтажная панель</span> <span class="gallery__sub">— модули на DIN-рейках</span></figcaption>
+            </figure>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="section" id="related-service" aria-labelledby="related-service-title" data-block="related-service">
