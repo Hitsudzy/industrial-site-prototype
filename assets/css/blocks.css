@@ -237,3 +237,43 @@
 .welcome__name {
   font-weight: var(--fw-bold);
 }
+
+/* ---------- Line icons (inline SVG, stroke = currentColor) ---------- */
+.icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: var(--color-text-muted);
+}
+.icon__accent {
+  stroke: var(--color-accent);
+  stroke-width: 2;
+}
+.icon__dot {
+  fill: var(--color-accent);
+  stroke: none;
+}
+
+/* ---------- 02 Directions ---------- */
+.direction__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+.direction__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  transition: color var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);
+}
+.card:hover .direction__icon {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+}
