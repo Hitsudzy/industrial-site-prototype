@@ -1,0 +1,6 @@
+/*
+ * Content blocks of the home page (welcome, directions, project cards, figures,
+ * news, partners, contacts + request form). Written so that inner pages can reuse
+ * them. Colours come only from tokens.css; concept B restyles through the same
+ * tokens and the few [data-concept="b"] rules at the end of this file.
+ */
