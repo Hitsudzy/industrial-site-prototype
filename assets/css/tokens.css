@@ -104,6 +104,12 @@
   --label-transform: uppercase;
   --label-tracking: 0.12em;
 
+  /* Pentagon sign (index.html hero): plate under the drawing-style art */
+  --sign-plate: #070d18;
+  --sign-fill-1: #10203a;
+  --sign-fill-2: #070d18;
+  --sign-on-fill: #e6edf5;
+
   --hero-bg:
     radial-gradient(60rem 30rem at 85% 20%, rgba(47, 211, 224, 0.16), transparent 60%),
     linear-gradient(180deg, #070d18 0%, #0b1220 100%);
@@ -154,6 +160,12 @@
   --heading-tracking: -0.015em;
   --label-transform: none;
   --label-tracking: 0.02em;
+
+  /* Pentagon sign: solid blue body with white lettering */
+  --sign-plate: #0b1640;
+  --sign-fill-1: #2a62db;
+  --sign-fill-2: #142a78;
+  --sign-on-fill: #ffffff;
 
   --hero-bg:
     radial-gradient(50rem 28rem at 80% 10%, rgba(143, 179, 255, 0.22), transparent 60%),

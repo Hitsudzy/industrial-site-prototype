@@ -6,6 +6,7 @@
  *     storage is blocked)
  *   - mobile menu toggle
  *   - current year in the footer
+ *   - pentagon sign: squeeze a long word into the frame
  * No dependencies, no network requests.
  */
 (function () {
@@ -101,6 +102,7 @@
     syncUrl(c);
     var btn = document.querySelector("[data-concept-toggle]");
     if (btn) syncButton(btn, c);
+    fitSignText();
     var status = document.querySelector("[data-concept-status]");
     if (status && announce) {
       status.textContent = "Включена концепция " + CONCEPTS[c].code + " " + CONCEPTS[c].name;
@@ -151,6 +153,32 @@
     else if (wide.addListener) wide.addListener(onChange);
   }
 
+  /*
+   * Pentagon sign: the lettering is plain SVG <text>, so the customer's word can be
+   * typed straight into index.html. If it is wider than the inner frame (data-max,
+   * in viewBox units), squeeze it to fit; a short word keeps its natural width.
+   * Re-run on concept switch (other font) and when the web fonts arrive.
+   */
+  function fitSignText() {
+    var texts = document.querySelectorAll(".sign__text[data-max]");
+    for (var i = 0; i < texts.length; i++) {
+      var t = texts[i];
+      var max = parseFloat(t.getAttribute("data-max"));
+      t.removeAttribute("textLength");
+      t.removeAttribute("lengthAdjust");
+      if (!max || typeof t.getComputedTextLength !== "function") continue;
+      if (t.getComputedTextLength() > max) {
+        t.setAttribute("textLength", String(max));
+        t.setAttribute("lengthAdjust", "spacingAndGlyphs");
+      }
+    }
+  }
+
+  function initSign() {
+    fitSignText();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitSignText);
+  }
+
   function initYear() {
     var nodes = document.querySelectorAll("[data-year]");
     var y = String(new Date().getFullYear());
@@ -161,6 +189,7 @@
     initConcept();
     initMenu();
     initYear();
+    initSign();
   }
 
   if (document.readyState === "loading") {

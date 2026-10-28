@@ -432,14 +432,72 @@ a:hover {
 }
 .hero__sign {
   justify-self: center;
-  width: min(18rem, 70vw);
-  color: var(--color-accent);
+  width: min(20rem, 72vw);
 }
-.hero__sign text {
-  fill: var(--color-text);
+
+/* ---------- Pentagon sign (inline SVG, see the comment above it in index.html) ----------
+ * One <text> serves both concepts; the drawing differs: group --a (contour, inner
+ * frame, measuring scale, nodes) in A, group --b (solid body, inner frame) in B. */
+.sign {
+  color: var(--color-accent);
+  overflow: visible;
+}
+.sign__art--b {
+  display: none;
+}
+:root[data-concept="b"] .sign__art--a {
+  display: none;
+}
+:root[data-concept="b"] .sign__art--b {
+  display: inline;
+}
+.sign__plate {
+  fill: var(--sign-plate);
+  fill-opacity: 0.88;
+}
+.sign__outline,
+.sign__line,
+.sign__frame,
+.sign__ticks,
+.sign__marks,
+.sign__ring,
+.sign__inner,
+.sign__rule {
+  fill: none;
+  stroke: currentColor;
+}
+.sign__outline { stroke-width: 2; }
+.sign__line { stroke-width: 0.75; opacity: 0.7; }
+.sign__ticks { stroke-width: 0.75; }
+.sign__frame { stroke-width: 1.25; }
+.sign__marks { stroke-width: 1; opacity: 0.8; }
+.sign__nodes {
+  fill: var(--sign-plate);
+  stroke: currentColor;
+  stroke-width: 1.25;
+}
+.sign__ring { stroke-width: 1.25; opacity: 0.8; }
+.sign__stop-1 { stop-color: var(--sign-fill-1); }
+.sign__stop-2 { stop-color: var(--sign-fill-2); }
+.sign__inner,
+.sign__rule {
+  stroke: var(--sign-on-fill);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+.sign__text {
+  fill: var(--sign-on-fill);
   font-family: var(--font-label);
-  font-size: 9px;
-  letter-spacing: 0.1em;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: var(--label-transform);
+}
+:root[data-concept="b"] .sign__text {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 /* ---------- Page head (inner pages) ---------- */
