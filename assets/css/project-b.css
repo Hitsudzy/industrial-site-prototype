@@ -346,3 +346,127 @@
     grid-column: span 3;
   }
 }
+
+/* ---------- 02 Gallery: rounded shadowed tiles, captions under the tile ---------- */
+:root[data-concept="b"] .gallery {
+  gap: clamp(1.5rem, 1rem + 1.5vw, 2.5rem) clamp(1.25rem, 0.75rem + 1.5vw, 2rem);
+}
+:root[data-concept="b"] .gallery__figure {
+  gap: var(--space-3);
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+:root[data-concept="b"] .gallery__open {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  transition: box-shadow var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+}
+:root[data-concept="b"] .gallery__open:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+:root[data-concept="b"] .gallery__open:focus-visible {
+  outline-offset: 3px;
+}
+:root[data-concept="b"] .gallery__media {
+  padding: clamp(1rem, 0.5rem + 2vw, 2.25rem);
+  border-radius: var(--radius-xl);
+  background: var(--illus-bg);
+}
+/* zoom badge: a white circle with a blue "+" */
+:root[data-concept="b"] .gallery__zoom {
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--color-accent), var(--color-accent)) center / 14px 2px no-repeat,
+    linear-gradient(var(--color-accent), var(--color-accent)) center / 2px 14px no-repeat,
+    var(--color-surface);
+  box-shadow: var(--shadow);
+}
+:root[data-concept="b"] .gallery__caption {
+  padding: 0 var(--space-2);
+  border-top: 0;
+  font-size: var(--fs-base);
+}
+:root[data-concept="b"] .gallery__no {
+  display: none;
+}
+:root[data-concept="b"] .gallery__sub {
+  font-size: var(--fs-sm);
+}
+
+/* code-drawn sheets: white "paper" with soft blue ink on the gradient panel */
+:root[data-concept="b"] .art__sheet {
+  fill: var(--color-surface);
+}
+:root[data-concept="b"] .art__fill,
+:root[data-concept="b"] .art__rail {
+  fill: var(--tint);
+}
+:root[data-concept="b"] .art__side {
+  fill: var(--tint-strong);
+}
+:root[data-concept="b"] .art__module,
+:root[data-concept="b"] .art__rail,
+:root[data-concept="b"] .art__hatch {
+  stroke: var(--tint-strong);
+}
+:root[data-concept="b"] .art__hatch {
+  opacity: 1;
+}
+:root[data-concept="b"] .art__bar {
+  fill: var(--tint-strong);
+  opacity: 1;
+}
+:root[data-concept="b"] .art__bar--accent {
+  fill: currentColor;
+  opacity: 0.75;
+}
+:root[data-concept="b"] .art__blur {
+  opacity: 0.6;
+}
+
+/* ---------- Lightbox: light neutral frame, the backdrop stays opaque ---------- */
+:root[data-concept="b"] .lightbox {
+  background-color: var(--color-bg-alt);
+}
+:root[data-concept="b"] .lightbox__frame {
+  gap: var(--space-4);
+  padding-block: var(--space-4) var(--space-5);
+}
+:root[data-concept="b"] .lightbox__media {
+  padding: clamp(1rem, 0.5rem + 2.5vw, 3rem);
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: var(--illus-bg);
+  box-shadow: var(--shadow-lg);
+}
+:root[data-concept="b"] .lightbox__counter {
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--pill);
+  background: var(--tint);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+:root[data-concept="b"] .lightbox__hint {
+  letter-spacing: 0.01em;
+}
+:root[data-concept="b"] .lightbox__btn {
+  width: 3rem;
+  height: 3rem;
+  border-color: transparent;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+:root[data-concept="b"] .lightbox__btn:hover {
+  border-color: var(--color-accent);
+}
+:root[data-concept="b"] .lightbox__title {
+  font-size: var(--fs-lg);
+}
