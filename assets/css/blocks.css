@@ -430,3 +430,52 @@
 .news-card__meta time {
   color: var(--color-accent);
 }
+
+/* ---------- 06 Partners: strip of neutral marks ---------- */
+.partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+@media (min-width: 1100px) {
+  .partners {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+.partners__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: 8rem;
+  padding: var(--space-4) var(--space-3);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--partner-ink);
+  transition: color var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease);
+}
+.partners__item:hover {
+  color: var(--color-accent);
+  background-color: var(--color-surface);
+}
+.partners__mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.partners__name {
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  text-transform: var(--label-transform);
+  letter-spacing: var(--label-tracking);
+  color: var(--color-text-muted);
+}
