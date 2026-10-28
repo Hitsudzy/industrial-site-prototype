@@ -115,6 +115,8 @@
   --color-error: #ff8a8a;
   --color-success: #6ee7a8;
   --partner-ink: #9fb0c4;
+  /* tick of the checked checkbox, colour = --color-on-accent (inline data URI, no request) */
+  --check-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%2304121c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 
   /* Pentagon sign (index.html hero): plate under the drawing-style art */
   --sign-plate: #070d18;
@@ -189,6 +191,7 @@
   --color-error: #b42318;
   --color-success: #157a3e;
   --partner-ink: #47526e;
+  --check-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 
   /* Pentagon sign: solid blue body with white lettering */
   --sign-plate: #0b1640;
