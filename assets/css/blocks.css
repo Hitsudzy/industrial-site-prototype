@@ -417,3 +417,16 @@
 .figures__label {
   color: var(--color-text-muted);
 }
+
+/* ---------- 05 News ---------- */
+.news-card .card__title {
+  font-size: var(--fs-lg);
+  line-height: 1.35;
+}
+.news-card__meta {
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+.news-card__meta time {
+  color: var(--color-accent);
+}

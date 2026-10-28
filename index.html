@@ -344,15 +344,44 @@
     </section>
     <section class="section" id="news" aria-labelledby="news-title" data-block="news">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head section__head--split">
           <span class="eyebrow">05 / Новости</span>
           <h2 id="news-title">Новости</h2>
+          <a class="section__more" href="news.html">Все новости</a>
         </div>
-        <div class="placeholder">
-          <span class="placeholder__tag">Плейсхолдер · 3 последние новости</span>
-          <p>Дата, заголовок, анонс.</p>
-          <p><a href="news.html">Все новости</a></p>
-        </div>
+        <!-- Новости — рыба: даты и события условные -->
+        <ul class="card-grid card-grid--3" role="list">
+          <li>
+            <article class="card news-card frame-ticks">
+              <div class="card__body">
+                <p class="label news-card__meta"><time datetime="2026-09-18">18.09.2026</time> <span aria-hidden="true">·</span> Проекты</p>
+                <h3 class="card__title"><a class="card__link" href="news.html">Завершены комплексные испытания системы управления на энергоблоке</a></h3>
+                <p class="card__text">Специалисты Компании вместе с эксплуатирующей организацией провели испытания АСУ ТП вспомогательных систем. Система принята в опытную эксплуатацию.</p>
+                <span class="card__more" aria-hidden="true">Читать</span>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card news-card frame-ticks">
+              <div class="card__body">
+                <p class="label news-card__meta"><time datetime="2026-07-02">02.07.2026</time> <span aria-hidden="true">·</span> Сварка</p>
+                <h3 class="card__title"><a class="card__link" href="news.html">Сварочный комплекс прошёл аттестацию технологии</a></h3>
+                <p class="card__text">Комплекс орбитальной сварки подтвердил соответствие требованиям к сварке трубопроводов атомных станций. Начаты поставки на объекты.</p>
+                <span class="card__more" aria-hidden="true">Читать</span>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card news-card frame-ticks">
+              <div class="card__body">
+                <p class="label news-card__meta"><time datetime="2026-05-14">14.05.2026</time> <span aria-hidden="true">·</span> События</p>
+                <h3 class="card__title"><a class="card__link" href="news.html">Компания примет участие в отраслевой выставке</a></h3>
+                <p class="card__text">На стенде покажем программные средства верхнего уровня, обновлённую линейку шкафов автоматизации и сварочное оборудование.</p>
+                <span class="card__more" aria-hidden="true">Читать</span>
+              </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="section section--alt" id="partners" aria-labelledby="partners-title" data-block="partners">
