@@ -358,15 +358,6 @@
 :root[data-concept="b"] .gallery {
   gap: clamp(1.5rem, 1rem + 1.5vw, 2.5rem) clamp(1.25rem, 0.75rem + 1.5vw, 2rem);
 }
-/* tablets: no orphan tiles — "list" pairs with "assembly", "panel" goes full width */
-@media (min-width: 720px) and (max-width: 1099.98px) {
-  :root[data-concept="b"] .gallery__item--assembly {
-    grid-column: auto;
-  }
-  :root[data-concept="b"] .gallery__item--panel {
-    grid-column: 1 / -1;
-  }
-}
 :root[data-concept="b"] .gallery__figure {
   gap: var(--space-3);
   border: 0;
