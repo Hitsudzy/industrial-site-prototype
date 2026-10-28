@@ -201,15 +201,114 @@
     </section>
     <section class="section" id="key-projects" aria-labelledby="key-projects-title" data-block="key-projects">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head section__head--split">
           <span class="eyebrow">03 / Проекты</span>
           <h2 id="key-projects-title">Ключевые проекты</h2>
+          <a class="section__more" href="projects.html">Все проекты</a>
         </div>
-        <div class="placeholder">
-          <span class="placeholder__tag">Плейсхолдер · 3–4 карточки проектов</span>
-          <p>Карточки из раздела «Проекты», выбираются в админке.</p>
-          <p><a href="project.html">Пример страницы проекта</a></p>
-        </div>
+        <!-- Объекты обезличены; роли и годы условные. Обложки нарисованы кодом. -->
+        <ul class="card-grid card-grid--4" role="list">
+          <li>
+            <article class="card project frame-ticks">
+              <div class="project__cover grid-surface">
+                <img class="only-a" src="assets/img/cabinet-a.svg" width="270" height="470" loading="lazy" decoding="async" alt="">
+                <img class="only-b" src="assets/img/cabinet-b.svg" width="270" height="470" loading="lazy" decoding="async" alt="">
+              </div>
+              <div class="card__body">
+                <span class="label">АСУ ТП · 2016–2021</span>
+                <h3 class="card__title"><a class="card__link" href="project.html">Энергоблок АЭС, Россия</a></h3>
+                <p class="card__text">Система управления вспомогательными системами энергоблока: проект, изготовление шкафов, пусконаладка.</p>
+                <dl class="project__meta">
+                  <dt>Роль</dt>
+                  <dd>Генподрядчик АСУ ТП</dd>
+                </dl>
+                <span class="card__more" aria-hidden="true">О проекте</span>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card project frame-ticks">
+              <div class="project__cover grid-surface">
+                <svg class="cover" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
+                  <path class="cover__axis" d="M85 22v136M16 150h288"/>
+                  <path class="cover__dim" d="M50 34h70M50 29v10M120 29v10"/>
+                  <text class="cover__text" x="85" y="26" text-anchor="middle">Ø 70</text>
+                  <path class="cover__line" d="M50 150V90h70v60M120 112h82v38M120 112l12-10h58l12 10M222 150q18-48 12-88h42q-6 40 12 88"/>
+                  <path class="cover__line cover__line--accent" d="M50 90a35 35 0 0 1 70 0"/>
+                  <path class="cover__thin" d="M60 104h50M60 116h50M134 124h12v14h-12zM158 124h12v14h-12zM182 124h12v14h-12zM231 96h50M229 120h54"/>
+                  <text class="cover__text" x="300" y="170" text-anchor="end">ЭБ-2 · СХЕМА</text>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="label">ПТК · ПО · 2019–2024</span>
+                <h3 class="card__title"><a class="card__link" href="project.html">АЭС, зарубежный проект</a></h3>
+                <p class="card__text">Поставка программно-технического комплекса и программного обеспечения верхнего уровня, шеф-наладка на площадке.</p>
+                <dl class="project__meta">
+                  <dt>Роль</dt>
+                  <dd>Поставщик ПТК</dd>
+                </dl>
+                <span class="card__more" aria-hidden="true">О проекте</span>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card project frame-ticks">
+              <div class="project__cover grid-surface">
+                <svg class="cover" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
+                  <path class="cover__axis" d="M12 95h296"/>
+                  <path class="cover__line" d="M28 70h264M28 120h264M28 70a8 25 0 0 0 0 50M292 70a8 25 0 0 1 0 50"/>
+                  <path class="cover__thin" d="M155 70v50M165 70v50"/>
+                  <ellipse class="cover__line cover__line--accent" cx="160" cy="95" rx="20" ry="52"/>
+                  <path class="cover__line cover__line--accent" d="M150 30h20v13h-20zM160 43v8"/>
+                  <path class="cover__dim" d="M246 70v50M241 70h10M241 120h10"/>
+                  <text class="cover__text" x="254" y="99">Ø 325</text>
+                  <text class="cover__text" x="28" y="162">ШОВ 1 · ОРБИТА 360°</text>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="label">Сварка · 2020–2023</span>
+                <h3 class="card__title"><a class="card__link" href="project.html">Комплекс орбитальной сварки трубопроводов</a></h3>
+                <p class="card__text">Разработка и поставка комплекса для сварки трубопроводов первого контура, аттестация технологии, обучение сварщиков.</p>
+                <dl class="project__meta">
+                  <dt>Роль</dt>
+                  <dd>Разработчик и поставщик</dd>
+                </dl>
+                <span class="card__more" aria-hidden="true">О проекте</span>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card project frame-ticks">
+              <div class="project__cover grid-surface">
+                <svg class="cover" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
+                  <rect class="cover__line" x="30" y="48" width="40" height="84" rx="6"/>
+                  <path class="cover__thin" d="M30 96h40"/>
+                  <circle class="cover__line" cx="136" cy="112" r="15"/>
+                  <path class="cover__line" d="M130 103l14 9-14 9z"/>
+                  <path class="cover__line" d="M192 104l16 16v-16l-16 16z"/>
+                  <rect class="cover__line" x="258" y="40" width="36" height="52" rx="4"/>
+                  <path class="cover__line cover__line--accent" d="M70 112h51M151 112h41M208 112h40V66h10"/>
+                  <path class="cover__thin" d="M96 112V84M100 112v-28M228 112v26"/>
+                  <circle class="cover__node" cx="98" cy="78" r="7"/>
+                  <circle class="cover__node" cx="228" cy="144" r="7"/>
+                  <text class="cover__text" x="98" y="62" text-anchor="middle">T1</text>
+                  <text class="cover__text" x="246" y="148">P2</text>
+                  <circle class="cover__dot" cx="200" cy="96" r="3"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="label">АСУ ТП · 2022–2025</span>
+                <h3 class="card__title"><a class="card__link" href="project.html">Модернизация АСУ ТП энергоблока</a></h3>
+                <p class="card__text">Замена устаревших средств автоматизации без останова смежных систем, перенос алгоритмов на новую платформу.</p>
+                <dl class="project__meta">
+                  <dt>Роль</dt>
+                  <dd>Исполнитель модернизации</dd>
+                </dl>
+                <span class="card__more" aria-hidden="true">О проекте</span>
+              </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="section section--alt" id="figures" aria-labelledby="figures-title" data-block="figures">
