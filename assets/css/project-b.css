@@ -41,6 +41,13 @@
   min-height: 2.75rem;
   padding-inline: var(--space-5);
 }
+/* phones: keep base.css compact header CTA (the B pill padding above would push the menu button onto a second row) */
+@media (max-width: 479.98px) {
+  :root[data-concept="b"] .site-header__cta {
+    padding-inline: var(--space-3);
+    font-size: var(--fs-xs);
+  }
+}
 :root[data-concept="b"] .site-nav__link {
   font-weight: 500;
 }
