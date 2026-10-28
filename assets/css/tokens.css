@@ -104,6 +104,18 @@
   --label-transform: uppercase;
   --label-tracking: 0.12em;
 
+  /* Content blocks (assets/css/blocks.css) */
+  --tick: var(--color-accent);          /* drawing corner marks on cards; off in B */
+  --card-lift: -2px;                    /* hover shift of a card */
+  --figure-font: var(--font-mono);      /* big numbers in «Цифры» */
+  --figure-weight: 500;
+  --figure-color: var(--color-accent);
+  --field-bg: #0b1220;
+  --field-border: #6b86a6;              /* >= 3:1 against every A surface */
+  --color-error: #ff8a8a;
+  --color-success: #6ee7a8;
+  --partner-ink: #9fb0c4;
+
   /* Pentagon sign (index.html hero): plate under the drawing-style art */
   --sign-plate: #070d18;
   --sign-fill-1: #10203a;
@@ -165,6 +177,18 @@
   --heading-tracking: -0.015em;
   --label-transform: none;
   --label-tracking: 0.02em;
+
+  /* Content blocks (assets/css/blocks.css) */
+  --tick: transparent;
+  --card-lift: -4px;
+  --figure-font: var(--font-sans);
+  --figure-weight: 600;
+  --figure-color: var(--color-accent);
+  --field-bg: #ffffff;
+  --field-border: #7c88a3;              /* >= 3:1 against white and the light alt surfaces */
+  --color-error: #b42318;
+  --color-success: #157a3e;
+  --partner-ink: #47526e;
 
   /* Pentagon sign: solid blue body with white lettering */
   --sign-plate: #0b1640;

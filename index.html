@@ -104,11 +104,29 @@
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">01 / Приветствие</span>
-          <h2 id="welcome-title">Приветствие</h2>
+          <h2 id="welcome-title">Обращение к посетителям</h2>
         </div>
-        <div class="placeholder">
-          <span class="placeholder__tag">Плейсхолдер · приветствие</span>
-          <p>Короткое обращение к посетителю: текст, фото и подпись руководителя.</p>
+        <div class="welcome">
+          <!-- Портрет — абстрактный плейсхолдер, нарисован кодом; фото руководителя предоставит заказчик -->
+          <div class="welcome__portrait grid-surface frame-ticks">
+            <svg class="portrait" viewBox="0 0 240 300" aria-hidden="true" focusable="false">
+              <path class="portrait__axis" d="M120 14v272M14 128h212"/>
+              <circle class="portrait__ring" cx="120" cy="112" r="70"/>
+              <path class="portrait__fill" d="M120 62a46 52 0 1 1 0 104a46 52 0 1 1 0-104zM32 300c0-62 38-112 88-112s88 50 88 112z"/>
+              <path class="portrait__line" d="M120 62a46 52 0 1 1 0 104a46 52 0 1 1 0-104zM32 300c0-62 38-112 88-112s88 50 88 112"/>
+              <path class="portrait__dim" d="M14 62h18M14 166h18M23 62v104M20 66l3-4 3 4M20 162l3 4 3-4"/>
+              <text class="portrait__label" x="216" y="26" text-anchor="end">ФОТО 3:4</text>
+            </svg>
+          </div>
+          <div class="welcome__body">
+            <p class="welcome__lead">Уважаемые коллеги и партнёры!</p>
+            <p class="welcome__text">Более двадцати лет Компания создаёт системы управления и сварочное оборудование для объектов атомной энергетики. Мы проектируем, изготавливаем, налаживаем и сопровождаем комплексы, от которых зависит безопасная и устойчивая работа энергоблоков.</p>
+            <p class="welcome__text">Наша команда соединяет инженерную школу отрасли с собственными программными разработками и отвечает за результат на всём жизненном цикле оборудования. Будем рады обсудить вашу задачу — от технического задания до ввода в эксплуатацию.</p>
+            <p class="welcome__sign">
+              <span class="welcome__name">Имя Отчество Фамилия</span>
+              <span class="welcome__role label">Генеральный директор</span>
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -4,3 +4,236 @@
  * them. Colours come only from tokens.css; concept B restyles through the same
  * tokens and the few [data-concept="b"] rules at the end of this file.
  */
+
+/* ---------- Shared pieces ---------- */
+/* Section head with a thin rule; a short accent segment marks its start (A only) */
+.section__head {
+  position: relative;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+.section__head::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 4rem;
+  height: 1px;
+  background: var(--tick);
+}
+@media (min-width: 720px) {
+  .section__head--split {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+  .section__head--split > .eyebrow {
+    grid-column: 1 / -1;
+  }
+}
+.section__more {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+
+/* "Drawing" corner marks: top-left and bottom-right, colour --tick (transparent in B) */
+.frame-ticks {
+  position: relative;
+}
+.frame-ticks::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--tick), var(--tick)) left top / 12px 1px no-repeat,
+    linear-gradient(var(--tick), var(--tick)) left top / 1px 12px no-repeat,
+    linear-gradient(var(--tick), var(--tick)) right bottom / 12px 1px no-repeat,
+    linear-gradient(var(--tick), var(--tick)) right bottom / 1px 12px no-repeat;
+}
+
+/* Small technical label inside blocks: mono in A, sans in B */
+.label {
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  text-transform: var(--label-transform);
+  letter-spacing: var(--label-tracking);
+  color: var(--color-text-muted);
+}
+
+/* Bordered surface with the "drawing" grid behind an illustration */
+.grid-surface {
+  background-color: var(--color-surface);
+  background-image:
+    linear-gradient(var(--grid-line-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-major) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+/* Card: bordered surface; the whole card is clickable through .card__link::after,
+ * one tab stop per card, the focus ring is drawn around the whole card. */
+.card-grid {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 720px) {
+  .card-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .card-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .card-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.card-grid > li {
+  display: flex;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  transition: transform var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease),
+    background-color var(--dur-base) var(--ease);
+}
+.card:hover {
+  transform: translateY(var(--card-lift));
+  border-color: var(--color-accent);
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+.card__title {
+  font-size: var(--fs-h3);
+}
+.card__text {
+  color: var(--color-text-muted);
+}
+.card__link {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+}
+.card__link:focus-visible {
+  outline: none;
+}
+.card__link:focus-visible::after {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: 3px;
+}
+.card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-3);
+  color: var(--color-link);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+.card__more::after {
+  content: "→";
+  transition: transform var(--dur-fast) var(--ease);
+}
+.card:hover .card__more::after {
+  transform: translateX(3px);
+}
+
+/* ---------- 01 Welcome ---------- */
+.welcome {
+  display: grid;
+  gap: var(--space-6);
+  align-items: start;
+}
+@media (min-width: 720px) {
+  .welcome {
+    grid-template-columns: minmax(12rem, 17rem) 1fr;
+    gap: var(--space-7);
+  }
+}
+.welcome__portrait {
+  max-width: 17rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.portrait {
+  width: 100%;
+  height: auto;
+  color: var(--color-accent);
+}
+.portrait__axis {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.75;
+  stroke-dasharray: 6 4;
+  opacity: 0.35;
+}
+.portrait__ring {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.75;
+  opacity: 0.3;
+}
+.portrait__fill {
+  fill: var(--color-surface-2);
+}
+.portrait__line,
+.portrait__dim {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+}
+.portrait__dim {
+  stroke-width: 1;
+  opacity: 0.7;
+}
+.portrait__label {
+  fill: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+.welcome__body {
+  display: grid;
+  gap: var(--space-4);
+  font-size: var(--fs-lg);
+}
+.welcome__lead {
+  font-weight: var(--fw-bold);
+}
+.welcome__text {
+  color: var(--color-text-muted);
+}
+.welcome__sign {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-accent);
+  font-size: var(--fs-base);
+}
+.welcome__name {
+  font-weight: var(--fw-bold);
+}
