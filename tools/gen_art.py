@@ -203,7 +203,7 @@ def cabinet_svg(concept):
         out.append(dim_line(iso(ox, oy, 0, -20, 0), iso(ox, oy, w, -20, 0), "800", 30, dc, tc, offset=(-5, 12), size=11))
         out.append(dim_line(iso(ox, oy, w + 20, 0, 0), iso(ox, oy, w + 20, d, 0), "600", -30, dc, tc, offset=(5, 12), size=11))
         out.append(dim_line(iso(ox, oy, -20, 0, 0), iso(ox, oy, -20, 0, h), "2000", -90, dc, tc, offset=(-7, 0), size=11))
-        out.append(f'<text x="{vw - 8}" y="18" text-anchor="end" fill="{tc}" font-family="{MONO}" font-size="9" letter-spacing="0.12em">ШУ-01 · ИЗОМЕТРИЯ</text>')
+        out.append(f'<text x="{vw - 8}" y="18" text-anchor="end" fill="{tc}" font-family="{MONO}" font-size="10" letter-spacing="0.1em">ШУ-01 · ИЗОМЕТРИЯ</text>')
         label = "Условная изометрия электротехнического шкафа с размерами"
     else:
         pal = PAL_B
