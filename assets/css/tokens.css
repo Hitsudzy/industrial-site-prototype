@@ -1,0 +1,177 @@
+/*
+ * Design tokens.
+ *
+ * The page carries data-concept="a" | "b" on <html> (set by assets/js/concept-init.js
+ * before first paint). Components use only the custom properties below, never
+ * raw colours, so a concept is switched by redefining tokens — nothing else.
+ *
+ *   A «инженерный тёмный»   — graphite / dark blue, cyan accent, drawing grid, mono accents
+ *   B «корпоративный светлый» — white, dark-blue text, dark hero, calm blue accent
+ *
+ * .theme-inverse marks a block that sits on the "inverse" surface (hero, footer):
+ * it re-maps the colour tokens to the --inv-* set of the active concept.
+ */
+
+:root {
+  /* Typography */
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
+  --font-label: var(--font-mono);
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-h2: clamp(1.625rem, 1.3rem + 1.4vw, 2.5rem);
+  --fs-h1: clamp(2.125rem, 1.5rem + 2.8vw, 4rem);
+  --lh-tight: 1.15;
+  --lh-base: 1.6;
+  --fw-regular: 400;
+  --fw-bold: 600;
+
+  /* Spacing (4 px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-pad: clamp(3rem, 2rem + 4vw, 6rem);
+
+  /* Layout */
+  --container: 76rem;
+  --gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
+  --header-h: 4.5rem;
+
+  /* Motion */
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  --focus-width: 3px;
+}
+
+/* ---------- Concept A: «инженерный тёмный» (default) ---------- */
+:root,
+:root[data-concept="a"] {
+  color-scheme: dark;
+
+  --color-bg: #0b1220;
+  --color-bg-alt: #0e1829;
+  --color-surface: #132238;
+  --color-surface-2: #1a2d47;
+  --color-border: #26415f;
+  --color-text: #e6edf5;
+  --color-text-muted: #9fb0c4;
+  --color-accent: #2fd3e0;
+  --color-accent-hover: #74e6ef;
+  --color-on-accent: #04121c;
+  --color-link: #5fdde8;
+  --color-focus: #ffd166;
+  --color-header-bg: rgba(11, 18, 32, 0.88);
+
+  --inv-bg: #070d18;
+  --inv-bg-alt: #0b1424;
+  --inv-surface: #10203a;
+  --inv-border: #26415f;
+  --inv-text: #e6edf5;
+  --inv-text-muted: #9fb0c4;
+  --inv-accent: #2fd3e0;
+  --inv-accent-hover: #74e6ef;
+  --inv-on-accent: #04121c;
+  --inv-link: #5fdde8;
+
+  /* "Drawing" grid behind the page */
+  --grid-line: rgba(47, 211, 224, 0.07);
+  --grid-line-major: rgba(47, 211, 224, 0.12);
+  --grid-size: 24px;
+  --grid-major: 120px;
+
+  --radius-sm: 2px;
+  --radius: 2px;
+  --radius-lg: 4px;
+  --shadow: none;
+  --border-style: solid;
+
+  --heading-weight: 600;
+  --heading-tracking: -0.01em;
+  --label-transform: uppercase;
+  --label-tracking: 0.12em;
+
+  --hero-bg:
+    radial-gradient(60rem 30rem at 85% 20%, rgba(47, 211, 224, 0.16), transparent 60%),
+    linear-gradient(180deg, #070d18 0%, #0b1220 100%);
+}
+
+/* ---------- Concept B: «корпоративный светлый» ---------- */
+:root[data-concept="b"] {
+  color-scheme: light;
+
+  --color-bg: #ffffff;
+  --color-bg-alt: #f3f6fb;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef2f9;
+  --color-border: #d5dce8;
+  --color-text: #0b1640;
+  --color-text-muted: #47526e;
+  --color-accent: #1f5bd6;
+  --color-accent-hover: #1747ab;
+  --color-on-accent: #ffffff;
+  --color-link: #1f5bd6;
+  --color-focus: #e8590c;
+  --color-header-bg: rgba(255, 255, 255, 0.94);
+
+  --inv-bg: #0b1640;
+  --inv-bg-alt: #101d4f;
+  --inv-surface: #15245c;
+  --inv-border: #2a3a78;
+  --inv-text: #ffffff;
+  --inv-text-muted: #b8c2dd;
+  --inv-accent: #8fb3ff;
+  --inv-accent-hover: #b9cfff;
+  --inv-on-accent: #0b1640;
+  --inv-link: #a9c4ff;
+
+  --grid-line: transparent;
+  --grid-line-major: transparent;
+  --grid-size: 24px;
+  --grid-major: 120px;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 1px 2px rgba(11, 22, 64, 0.06), 0 8px 24px rgba(11, 22, 64, 0.06);
+  --border-style: solid;
+
+  --font-label: var(--font-sans);
+  --heading-weight: 600;
+  --heading-tracking: -0.015em;
+  --label-transform: none;
+  --label-tracking: 0.02em;
+
+  --hero-bg:
+    radial-gradient(50rem 28rem at 80% 10%, rgba(143, 179, 255, 0.22), transparent 60%),
+    linear-gradient(160deg, #0b1640 0%, #13246a 100%);
+}
+
+/* Blocks on the inverse surface (hero, footer, CTA bands) */
+.theme-inverse {
+  --color-bg: var(--inv-bg);
+  --color-bg-alt: var(--inv-bg-alt);
+  --color-surface: var(--inv-surface);
+  --color-surface-2: var(--inv-surface);
+  --color-border: var(--inv-border);
+  --color-text: var(--inv-text);
+  --color-text-muted: var(--inv-text-muted);
+  --color-accent: var(--inv-accent);
+  --color-accent-hover: var(--inv-accent-hover);
+  --color-on-accent: var(--inv-on-accent);
+  --color-link: var(--inv-link);
+  color-scheme: dark;
+}
