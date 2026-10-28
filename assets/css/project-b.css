@@ -1,0 +1,215 @@
+/*
+ * Project page (project.html) in concept B «корпоративный светлый».
+ *
+ * Same HTML as concept A; every rule here is scoped to :root[data-concept="b"],
+ * so A is untouched (grep this file — no selector without the prefix).
+ * Colours only from tokens.css. Same character as the home page in B
+ * (home-b.css): Inter, large calm headings, no mono labels and no "01 /"
+ * numbering, soft shadows and big radii instead of drawing lines and corner
+ * ticks, code-drawn gradient panels (--illus-bg) instead of the drawing grid.
+ *
+ * Head on a light-grey panel with a rounded bottom, the specification as a
+ * white "fact card"; stages as calm circles on a thin line; «Что сделано» as a
+ * light band with big weight-300 numbers; gallery tiles with rounded shadowed
+ * media and captions under the tile; a light lightbox; the related service with
+ * an illustrated aside; other projects as one big card + rows (like the key
+ * projects on the home page); the CTA as a dark rounded band.
+ */
+
+:root[data-concept="b"] {
+  --section-pad: clamp(4rem, 2.5rem + 5vw, 8rem);
+  --fs-h2: clamp(2rem, 1.3rem + 2.4vw, 3.25rem);
+  --radius-lg: 20px;
+  --card-pad: clamp(1.25rem, 0.9rem + 1.2vw, 2rem);
+  --pill: 999px;
+}
+
+/* ---------- Global pieces (same as on the home page in B, see home-b.css) ---------- */
+:root[data-concept="b"] h2 {
+  max-width: 22ch;
+  letter-spacing: -0.03em;
+}
+:root[data-concept="b"] .btn {
+  min-height: 3rem;
+  padding-inline: var(--space-6);
+  border-radius: var(--pill);
+}
+:root[data-concept="b"] .btn--primary {
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+:root[data-concept="b"] .site-header__cta {
+  min-height: 2.75rem;
+  padding-inline: var(--space-5);
+}
+:root[data-concept="b"] .site-nav__link {
+  font-weight: 500;
+}
+:root[data-concept="b"] .section__head {
+  gap: var(--space-4);
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  padding-top: 0;
+  border-top: 0;
+}
+:root[data-concept="b"] .section__head::before {
+  display: none;
+}
+/* "01 / Раздел" → "Раздел": the B wording sits in data-b-text (a <span> around the
+ * number, as on the home page, would shift A's glyphs by a subpixel); the pseudo
+ * text is silent for screen readers, which keep reading the element's own text */
+:root[data-concept="b"] .eyebrow[data-b-text] {
+  font-size: 0;
+}
+:root[data-concept="b"] .eyebrow[data-b-text]::before {
+  content: attr(data-b-text);
+  content: attr(data-b-text) / "";
+  font-size: var(--fs-xs);
+}
+:root[data-concept="b"] .eyebrow {
+  justify-self: start;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--pill);
+  background: var(--tint);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+:root[data-concept="b"] .section__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  justify-self: start;
+  min-height: 2.75rem;
+  padding: 0 var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--pill);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+:root[data-concept="b"] .section__more::after {
+  content: "→";
+  color: var(--color-accent);
+}
+:root[data-concept="b"] .section__more:hover {
+  border-color: var(--color-accent);
+  background: var(--tint);
+}
+:root[data-concept="b"] .label {
+  font-weight: 500;
+}
+:root[data-concept="b"] .card {
+  border-color: transparent;
+  transition: transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease),
+    background-color var(--dur-base) var(--ease);
+}
+:root[data-concept="b"] .card:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+}
+:root[data-concept="b"] .card__body {
+  padding: var(--card-pad);
+}
+
+/* ---------- Head: big heading on a light panel with a rounded bottom ---------- */
+:root[data-concept="b"] .project-head {
+  padding-block: clamp(1.75rem, 1.25rem + 2vw, 3rem) clamp(3rem, 2rem + 4vw, 6rem);
+  border-bottom: 0;
+  border-radius: 0 0 clamp(1.25rem, 0.5rem + 3vw, 3rem) clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  background: var(--color-bg-alt);
+}
+:root[data-concept="b"] .breadcrumbs ol {
+  font-size: var(--fs-sm);
+}
+:root[data-concept="b"] .breadcrumbs li + li::before {
+  content: "›";
+  color: var(--color-text-muted);
+}
+:root[data-concept="b"] .project-head__eyebrow {
+  display: inline-block;
+  margin-top: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  background: var(--color-surface);
+}
+:root[data-concept="b"] .project-head .page-head__title {
+  max-width: 18ch;
+  margin-block: var(--space-4) 0;
+  font-size: clamp(2.25rem, 1.35rem + 3.8vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+:root[data-concept="b"] .project-head__grid {
+  margin-top: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+}
+@media (min-width: 960px) {
+  :root[data-concept="b"] .project-head__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 32rem);
+    gap: clamp(3rem, 1rem + 4vw, 6rem);
+  }
+}
+:root[data-concept="b"] .project-head__intro {
+  gap: var(--space-5);
+}
+:root[data-concept="b"] .project-head__lead {
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+:root[data-concept="b"] .project-head__note {
+  line-height: 1.7;
+}
+
+/* Specification: a white "fact card" — no numbers, no title-block grid */
+:root[data-concept="b"] .spec {
+  padding: clamp(1.25rem, 0.75rem + 2vw, 2.25rem);
+  border: 0;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+:root[data-concept="b"] .spec__head {
+  display: block;
+  padding: 0 0 var(--space-3);
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--color-text);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+:root[data-concept="b"] .spec__head span + span {
+  display: none;
+}
+:root[data-concept="b"] .spec__no {
+  display: none;
+}
+:root[data-concept="b"] .spec__row {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-1);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+:root[data-concept="b"] .spec__row:last-child {
+  padding-bottom: 0;
+}
+:root[data-concept="b"] .spec__row dt,
+:root[data-concept="b"] .spec__row dd {
+  padding: 0;
+  border: 0;
+}
+:root[data-concept="b"] .spec__row dt {
+  font-size: var(--fs-sm);
+}
+:root[data-concept="b"] .spec__row dd {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (min-width: 480px) {
+  :root[data-concept="b"] .spec__row {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: baseline;
+  }
+  :root[data-concept="b"] .spec__row dt {
+    padding: 0;
+  }
+}
