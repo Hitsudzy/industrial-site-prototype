@@ -317,12 +317,25 @@ a:hover {
   }
 }
 @media (max-width: 479.98px) {
+  .site-header__inner {
+    gap: var(--space-2);
+  }
+  .site-header .brand {
+    gap: var(--space-2);
+  }
+  .site-header .brand__mark {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
   .site-header__cta {
     padding-inline: var(--space-3);
     font-size: var(--fs-xs);
   }
   .brand__name {
     font-size: var(--fs-base);
+  }
+  .concept-switch__word {
+    display: none;
   }
 }
 
@@ -552,6 +565,9 @@ a:hover {
 }
 .site-footer__muted {
   color: var(--color-text-muted);
+}
+.site-footer__about {
+  margin-top: var(--space-4);
 }
 .site-footer__bottom {
   display: flex;
