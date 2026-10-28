@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/blocks.css">
   <script src="assets/js/concept-init.js"></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/request-form.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -434,10 +435,69 @@
           <span class="eyebrow">07 / Контакты</span>
           <h2 id="contacts-title">Контакты</h2>
         </div>
-        <div class="placeholder placeholder--tall">
-          <span class="placeholder__tag">Плейсхолдер · контакты и форма</span>
-          <p>Адрес, телефон, e-mail и форма «Направить запрос».</p>
-          <p><a class="btn btn--primary" href="contacts.html#request">Направить запрос</a></p>
+        <div class="contacts">
+          <div class="contacts__info">
+            <p class="section__lead">Расскажите о задаче — инженер свяжется с вами в течение одного рабочего дня.</p>
+            <!-- Контактные данные — заглушки -->
+            <dl class="contacts__list">
+              <div class="contacts__row">
+                <dt class="label">Адрес</dt>
+                <dd>Город, улица, дом 0</dd>
+              </div>
+              <div class="contacts__row">
+                <dt class="label">Телефон</dt>
+                <dd>+7 (000) 000-00-00</dd>
+              </div>
+              <div class="contacts__row">
+                <dt class="label">E-mail</dt>
+                <dd>info@example.invalid</dd>
+              </div>
+              <div class="contacts__row">
+                <dt class="label">Режим работы</dt>
+                <dd>Пн–Пт, 9:00–18:00</dd>
+              </div>
+            </dl>
+            <a class="btn btn--ghost" href="contacts.html">Все контакты и реквизиты</a>
+          </div>
+
+          <div class="request frame-ticks" id="request">
+            <h3 class="request__title" id="request-title">Направить запрос</h3>
+            <p class="request__note">Поля со звёздочкой (<span aria-hidden="true">*</span>) обязательны.</p>
+            <!-- В прототипе форма никуда не отправляется: assets/js/request-form.js проверяет поля и показывает сообщение -->
+            <form class="form" action="#request" method="post" aria-labelledby="request-title" data-request-form>
+              <div class="field">
+                <label class="field__label" for="rq-name">Контактное лицо <span class="field__req" aria-hidden="true">*</span></label>
+                <input class="field__input" id="rq-name" name="name" type="text" autocomplete="name" required aria-describedby="rq-name-error">
+                <p class="field__error" id="rq-name-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="rq-org">Организация</label>
+                <input class="field__input" id="rq-org" name="organization" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label class="field__label" for="rq-contact">E-mail или телефон <span class="field__req" aria-hidden="true">*</span></label>
+                <input class="field__input" id="rq-contact" name="contact" type="text" autocomplete="email" inputmode="email" required aria-describedby="rq-contact-hint rq-contact-error">
+                <p class="field__hint" id="rq-contact-hint">Например, name@domain.ru или +7 900 000-00-00</p>
+                <p class="field__error" id="rq-contact-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="rq-task">Задача <span class="field__req" aria-hidden="true">*</span></label>
+                <textarea class="field__input field__input--area" id="rq-task" name="task" rows="5" required aria-describedby="rq-task-hint rq-task-error"></textarea>
+                <p class="field__hint" id="rq-task-hint">Объект, состав работ, сроки — в свободной форме.</p>
+                <p class="field__error" id="rq-task-error"></p>
+              </div>
+              <div class="field field--check">
+                <input class="field__check" id="rq-consent" name="consent" type="checkbox" required aria-describedby="rq-consent-error">
+                <label for="rq-consent">Согласен(на) на обработку персональных данных в соответствии с <a href="privacy.html">Политикой обработки персональных данных</a> <span class="field__req" aria-hidden="true">*</span></label>
+                <p class="field__error" id="rq-consent-error"></p>
+              </div>
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">Отправить запрос</button>
+                <span class="label">Прототип: данные никуда не передаются</span>
+              </div>
+              <p class="form__status" role="status" data-form-status></p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
