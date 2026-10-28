@@ -368,3 +368,52 @@
   margin: 0;
   font-weight: var(--fw-bold);
 }
+
+/* ---------- 04 Figures ---------- */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+@media (min-width: 900px) {
+  .figures {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.figures__item {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-4);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+@media (min-width: 480px) {
+  .figures__item {
+    padding: var(--space-6) var(--space-5);
+  }
+}
+.figures__index {
+  color: var(--color-text-muted);
+}
+.figures__value {
+  font-family: var(--figure-font);
+  font-weight: var(--figure-weight);
+  font-size: clamp(2.25rem, 1.6rem + 2.6vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--figure-color);
+}
+.figures__unit {
+  margin-left: 0.05em;
+  font-size: 0.6em;
+  vertical-align: 0.6em;
+}
+.figures__label {
+  color: var(--color-text-muted);
+}
