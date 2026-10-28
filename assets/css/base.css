@@ -396,6 +396,50 @@ a:hover {
   display: flex;
   align-items: center;
 }
+/* Code-drawn background: artwork (--hero-art), scan line (A only), scrim on top */
+.hero__art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--hero-art) right center / cover no-repeat;
+}
+/* Scrim strengths are the SCRIMS in tools/check_hero_contrast.py: keep in sync.
+ * The text column ends at <= 56 % of the hero width on wide screens. */
+.hero__art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--color-bg) 62%, transparent);
+}
+@media (min-width: 900px) {
+  .hero__art::after {
+    background: linear-gradient(90deg,
+      color-mix(in srgb, var(--color-bg) 85%, transparent) 0%,
+      color-mix(in srgb, var(--color-bg) 72%, transparent) 58%,
+      transparent 80%);
+  }
+}
+.hero__scan {
+  display: var(--hero-scan);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--color-accent) 60%, transparent) 30%, color-mix(in srgb, var(--color-accent) 60%, transparent) 70%, transparent);
+  box-shadow: 0 0 14px 1px color-mix(in srgb, var(--color-accent) 40%, transparent);
+  opacity: 0.5;
+  animation: hero-scan 16s linear infinite;
+}
+@keyframes hero-scan {
+  from { transform: translateX(-2vw); }
+  to { transform: translateX(102vw); }
+}
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
 .hero__grid {
   display: grid;
   gap: var(--space-7);
@@ -688,6 +732,10 @@ body,
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero__scan {
+    display: none;
+    animation: none;
+  }
   *,
   *::before,
   *::after {
