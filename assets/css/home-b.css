@@ -1,0 +1,543 @@
+/*
+ * Home page in concept B «корпоративный светлый».
+ *
+ * Same HTML as concept A; every rule here is scoped to :root[data-concept="b"],
+ * so A is untouched (tools: grep this file — no selector without the prefix).
+ * Colours only from tokens.css. Character of B vs A:
+ *   - Inter instead of Plex, large calm headings, no mono labels, no numbering;
+ *   - soft shadows and big radii instead of drawing lines and corner ticks;
+ *   - "photo-like" code-drawn panels (gradients + illustrations) instead of grids;
+ *   - different layouts: quote with a big quotation mark, illustrated direction
+ *     cards, one big project + a list, a light figures band with dividers, news
+ *     as a list of rows, a light-grey partner ribbon, a white form card on grey.
+ */
+
+:root[data-concept="b"] {
+  --section-pad: clamp(4rem, 2.5rem + 5vw, 8rem);
+  --fs-h2: clamp(2rem, 1.3rem + 2.4vw, 3.25rem);
+  --radius-lg: 20px;
+  --card-pad: clamp(1.25rem, 0.9rem + 1.2vw, 2rem);
+  --pill: 999px;
+}
+
+/* ---------- Global pieces on the home page ---------- */
+:root[data-concept="b"] h2 {
+  max-width: 22ch;
+  letter-spacing: -0.03em;
+}
+:root[data-concept="b"] .btn {
+  min-height: 3rem;
+  padding-inline: var(--space-6);
+  border-radius: var(--pill);
+}
+:root[data-concept="b"] .btn--primary {
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+:root[data-concept="b"] .site-header__cta {
+  min-height: 2.75rem;
+  padding-inline: var(--space-5);
+}
+:root[data-concept="b"] .site-nav__link {
+  font-weight: 500;
+}
+
+/* Section head: no rule, no tick, no "01 /" numbering; eyebrow becomes a soft pill */
+:root[data-concept="b"] .section__head {
+  gap: var(--space-4);
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  padding-top: 0;
+  border-top: 0;
+}
+:root[data-concept="b"] .section__head::before {
+  display: none;
+}
+:root[data-concept="b"] .eyebrow__num {
+  display: none;
+}
+:root[data-concept="b"] .eyebrow {
+  justify-self: start;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--pill);
+  background: var(--tint);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+:root[data-concept="b"] .section__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  justify-self: start;
+  min-height: 2.75rem;
+  padding: 0 var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--pill);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+:root[data-concept="b"] .section__more::after {
+  content: "→";
+  color: var(--color-accent);
+}
+:root[data-concept="b"] .section__more:hover {
+  border-color: var(--color-accent);
+  background: var(--tint);
+}
+:root[data-concept="b"] .label {
+  font-weight: 500;
+}
+
+/* Cards: no border, soft shadow, large radius, deeper shadow on hover */
+:root[data-concept="b"] .card {
+  border-color: transparent;
+  transition: transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease),
+    background-color var(--dur-base) var(--ease);
+}
+:root[data-concept="b"] .card:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+}
+:root[data-concept="b"] .card__body {
+  padding: var(--card-pad);
+}
+
+/* ---------- Hero: big calm heading, rounded bottom edge ---------- */
+:root[data-concept="b"] .hero {
+  padding-block: clamp(4.5rem, 3rem + 7vw, 9rem);
+  border-radius: 0 0 clamp(1.25rem, 0.5rem + 3vw, 3rem) clamp(1.25rem, 0.5rem + 3vw, 3rem);
+}
+:root[data-concept="b"] .hero__title {
+  font-size: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin-bottom: var(--space-5);
+}
+:root[data-concept="b"] .hero__slogan {
+  max-width: 34ch;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  line-height: 1.5;
+  margin-bottom: var(--space-7);
+}
+/* in the hero the pill is an outline only: the text colour stays on the checked scrim */
+:root[data-concept="b"] .hero .eyebrow {
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+:root[data-concept="b"] .hero__logo {
+  display: none;
+}
+
+/* ---------- 01 Welcome: a quote with a big quotation mark ---------- */
+:root[data-concept="b"] .welcome {
+  gap: var(--space-6);
+  padding: clamp(1.5rem, 0.75rem + 3.5vw, 4.5rem);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-alt);
+}
+@media (min-width: 720px) {
+  :root[data-concept="b"] .welcome {
+    grid-template-columns: minmax(0, 1fr) minmax(11rem, 17rem);
+    gap: clamp(2rem, 1rem + 4vw, 5rem);
+    align-items: center;
+  }
+}
+:root[data-concept="b"] .welcome__portrait {
+  order: 2;
+  width: 100%;
+  max-width: 17rem;
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: var(--illus-bg);
+  box-shadow: var(--shadow);
+}
+@media (max-width: 719.98px) {
+  :root[data-concept="b"] .welcome__portrait {
+    max-width: 12rem;
+  }
+}
+:root[data-concept="b"] .portrait__axis,
+:root[data-concept="b"] .portrait__ring,
+:root[data-concept="b"] .portrait__dim,
+:root[data-concept="b"] .portrait__label {
+  display: none;
+}
+:root[data-concept="b"] .portrait__fill {
+  fill: var(--color-surface);
+  opacity: 0.9;
+}
+:root[data-concept="b"] .portrait__line {
+  stroke: none;
+}
+:root[data-concept="b"] .welcome__body {
+  gap: var(--space-5);
+}
+:root[data-concept="b"] .welcome__body::before {
+  content: "\201C";
+  content: "\201C" / "";
+  display: block;
+  height: 0.5em;
+  margin-bottom: var(--space-2);
+  color: var(--color-accent);
+  font-size: clamp(5rem, 4rem + 4vw, 8rem);
+  font-weight: 600;
+  line-height: 0.9;
+}
+:root[data-concept="b"] .welcome__lead {
+  font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+:root[data-concept="b"] .welcome__text {
+  line-height: 1.7;
+}
+:root[data-concept="b"] .welcome__sign {
+  margin-top: var(--space-2);
+  padding: var(--space-5) 0 0;
+  border-left: 0;
+  border-top: 1px solid var(--color-border);
+}
+:root[data-concept="b"] .welcome__name {
+  font-size: var(--fs-lg);
+}
+
+/* ---------- 02 Directions: illustration on top, shadowed card ---------- */
+:root[data-concept="b"] #directions .card-grid {
+  gap: clamp(1.25rem, 0.75rem + 1.5vw, 2rem);
+}
+:root[data-concept="b"] .direction__top {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  margin: calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad)) var(--space-3);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--illus-bg);
+  overflow: hidden;
+}
+/* concentric rings behind the icon: a code-drawn "photo" of a calm technical space */
+:root[data-concept="b"] .direction__top::before,
+:root[data-concept="b"] .direction__top::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 75%, transparent);
+  transform: translate(-50%, -50%);
+}
+:root[data-concept="b"] .direction__top::before {
+  width: 11rem;
+  height: 11rem;
+}
+:root[data-concept="b"] .direction__top::after {
+  width: 18rem;
+  height: 18rem;
+  border-color: color-mix(in srgb, var(--color-surface) 45%, transparent);
+}
+:root[data-concept="b"] .direction__top .label {
+  display: none;
+}
+:root[data-concept="b"] .direction__icon {
+  position: relative;
+  z-index: 1;
+  width: 5.5rem;
+  height: 5.5rem;
+  padding: 1.15rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text);
+}
+:root[data-concept="b"] .card:hover .direction__icon {
+  border-color: transparent;
+}
+:root[data-concept="b"] .direction .card__title {
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+}
+
+/* ---------- 03 Key projects: one big card + a list ---------- */
+:root[data-concept="b"] #key-projects .card-grid--4 {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+:root[data-concept="b"] .project__cover {
+  border-bottom: 0;
+  background: var(--illus-bg);
+}
+:root[data-concept="b"] .cover__text {
+  display: none;
+}
+:root[data-concept="b"] .project .label {
+  color: var(--color-accent);
+}
+@media (min-width: 600px) {
+  /* list rows: small illustration on the left, text on the right */
+  :root[data-concept="b"] #key-projects li + li .project {
+    flex-direction: row;
+  }
+  :root[data-concept="b"] #key-projects li + li .project__cover {
+    flex: 0 0 38%;
+    aspect-ratio: auto;
+    min-height: 10rem;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+  :root[data-concept="b"] #key-projects li + li .card__body {
+    gap: var(--space-2);
+  }
+  :root[data-concept="b"] #key-projects li + li .card__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: var(--fs-sm);
+  }
+  :root[data-concept="b"] #key-projects li + li .card__more {
+    padding-top: var(--space-1);
+  }
+}
+@media (min-width: 1000px) {
+  :root[data-concept="b"] #key-projects .card-grid--4 {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+  :root[data-concept="b"] #key-projects li:first-child {
+    grid-row: span 3;
+  }
+  :root[data-concept="b"] #key-projects li:first-child .project__cover {
+    flex: 1;
+    aspect-ratio: auto;
+    min-height: 20rem;
+  }
+}
+:root[data-concept="b"] #key-projects li:first-child .card__title {
+  font-size: clamp(1.375rem, 1.1rem + 1vw, 2rem);
+  line-height: 1.2;
+}
+:root[data-concept="b"] #key-projects li:first-child .card__text {
+  font-size: var(--fs-lg);
+}
+
+/* ---------- 04 Figures: a light band with thin dividers ---------- */
+:root[data-concept="b"] .figures {
+  row-gap: var(--space-7);
+  border: 0;
+}
+:root[data-concept="b"] .figures__item {
+  gap: var(--space-3);
+  padding: 0 var(--space-4);
+  border: 0;
+  border-left: 1px solid var(--color-border);
+}
+:root[data-concept="b"] .figures__item:nth-child(odd) {
+  padding-left: 0;
+  border-left: 0;
+}
+@media (min-width: 480px) {
+  :root[data-concept="b"] .figures__item {
+    padding: 0 var(--space-6);
+  }
+}
+@media (min-width: 900px) {
+  :root[data-concept="b"] .figures__item:nth-child(odd) {
+    padding-left: var(--space-6);
+    border-left: 1px solid var(--color-border);
+  }
+  :root[data-concept="b"] .figures__item:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+:root[data-concept="b"] .figures__index {
+  display: none;
+}
+:root[data-concept="b"] .figures__value {
+  font-size: clamp(3rem, 1.9rem + 4.2vw, 5.75rem);
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  color: var(--color-text);
+}
+:root[data-concept="b"] .figures__unit {
+  color: var(--color-accent);
+  font-weight: 400;
+}
+:root[data-concept="b"] .figures__label {
+  max-width: 16ch;
+  font-size: var(--fs-base);
+}
+
+/* ---------- 05 News: a list of rows (date | headline | arrow) ---------- */
+:root[data-concept="b"] #news .card-grid--3 {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+}
+:root[data-concept="b"] .news-card {
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+:root[data-concept="b"] .news-card:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--color-bg-alt);
+}
+:root[data-concept="b"] .news-card .card__link::after {
+  border-radius: 0;
+}
+:root[data-concept="b"] .news-card .card__body {
+  padding: var(--space-5) 0;
+}
+:root[data-concept="b"] .news-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-3);
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+:root[data-concept="b"] .news-card__meta span {
+  display: none;
+}
+:root[data-concept="b"] .news-card__meta time {
+  color: var(--color-text);
+}
+:root[data-concept="b"] .news-card .card__title {
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  font-weight: 500;
+}
+@media (min-width: 720px) {
+  :root[data-concept="b"] .news-card .card__body {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr) auto;
+    column-gap: clamp(1.5rem, 0.5rem + 3vw, 4rem);
+    row-gap: var(--space-2);
+    align-items: start;
+    padding: var(--space-6) var(--space-4);
+  }
+  :root[data-concept="b"] .news-card__meta {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    flex-direction: column;
+    padding-top: 0.2rem;
+  }
+  :root[data-concept="b"] .news-card .card__title,
+  :root[data-concept="b"] .news-card .card__text {
+    grid-column: 2;
+  }
+  :root[data-concept="b"] .news-card .card__more {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    font-size: 0;
+    transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+  }
+  :root[data-concept="b"] .news-card .card__more::after {
+    font-size: 1.125rem;
+  }
+  :root[data-concept="b"] .news-card:hover .card__more {
+    border-color: var(--color-accent);
+    background: var(--color-surface);
+  }
+}
+
+/* ---------- 06 Partners: a light-grey ribbon of wordmarks ---------- */
+:root[data-concept="b"] #partners {
+  padding-block: clamp(3rem, 2rem + 3vw, 5rem);
+}
+:root[data-concept="b"] .partners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) clamp(1rem, 0.25rem + 2.5vw, 2.75rem);
+  padding: clamp(1rem, 0.5rem + 2vw, 2.25rem) clamp(1rem, 0.5rem + 2vw, 3rem);
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-alt);
+}
+:root[data-concept="b"] .partners__item {
+  flex-direction: row;
+  gap: var(--space-2);
+  min-height: 3rem;
+  padding: var(--space-2);
+  border: 0;
+}
+:root[data-concept="b"] .partners__item:hover {
+  background: transparent;
+  color: var(--color-text);
+}
+:root[data-concept="b"] .partners__mark {
+  width: 2rem;
+  height: 2rem;
+}
+:root[data-concept="b"] .partners__name {
+  color: var(--partner-ink);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- 07 Contacts: white form card on a light-grey section ---------- */
+:root[data-concept="b"] #contacts {
+  background-color: var(--color-bg-alt);
+}
+:root[data-concept="b"] .contacts {
+  align-items: center;
+}
+:root[data-concept="b"] .contacts__list {
+  gap: var(--space-4);
+  border-top: 0;
+}
+:root[data-concept="b"] .contacts__row {
+  padding-block: 0;
+  border-bottom: 0;
+}
+:root[data-concept="b"] .contacts__row dd {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+:root[data-concept="b"] .request {
+  padding: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  border: 0;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+:root[data-concept="b"] .request__title {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+:root[data-concept="b"] .field__input {
+  min-height: 3.25rem;
+  padding: var(--space-3) var(--space-4);
+  border-radius: 12px;
+}
+:root[data-concept="b"] .field__input--area {
+  min-height: 9rem;
+}
+:root[data-concept="b"] .field__input:focus-visible {
+  box-shadow: 0 0 0 5px var(--tint);
+}
+:root[data-concept="b"] .field__input[aria-invalid="true"] {
+  box-shadow: inset 0 0 0 1px var(--color-error);
+}
+:root[data-concept="b"] .field__check {
+  border-radius: 6px;
+}
+:root[data-concept="b"] .field__error::before {
+  font-family: inherit;
+}
+:root[data-concept="b"] .form__actions .btn {
+  min-height: 3.25rem;
+}
+:root[data-concept="b"] .form__status {
+  border-radius: 12px;
+  background: var(--color-bg-alt);
+}

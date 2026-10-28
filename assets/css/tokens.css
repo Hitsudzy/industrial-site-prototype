@@ -126,6 +126,13 @@
 
   /* First-screen artwork (tools/gen_art.py); hero text stays AA over it thanks to
      the scrim in base.css — worst case checked by tools/check_hero_contrast.py */
+  /* Concept-B home layout (assets/css/home-b.css); neutral values here, A never uses them */
+  --tint: var(--color-surface-2);
+  --tint-strong: var(--color-border);
+  --illus-bg: var(--color-surface);
+  --shadow-lg: none;
+  --radius-xl: 4px;
+
   --hero-art: url("../img/hero-a.svg");
   --hero-scan: block;
 
@@ -200,6 +207,16 @@
   --sign-fill-1: #2a62db;
   --sign-fill-2: #142a78;
   --sign-on-fill: #ffffff;
+
+  /* Home page layout of B (assets/css/home-b.css) */
+  --tint: #eaf0fc;                      /* soft accent wash: pills, icon plates */
+  --tint-strong: #c9d8f6;               /* silhouettes and shapes in illustrations */
+  --illus-bg:                           /* "photo-like" illustration panels */
+    radial-gradient(120% 90% at 85% 10%, rgba(143, 179, 255, 0.55), transparent 55%),
+    radial-gradient(90% 80% at 10% 100%, rgba(31, 91, 214, 0.18), transparent 60%),
+    linear-gradient(160deg, #f4f7fd 0%, #dfe8fa 100%);
+  --shadow-lg: 0 2px 6px rgba(11, 22, 64, 0.05), 0 24px 56px rgba(11, 22, 64, 0.12);
+  --radius-xl: 24px;
 
   --hero-art: url("../img/hero-b.svg");
   --hero-scan: none;
