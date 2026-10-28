@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Название проекта — Проекты — Компания (прототип)</title>
-  <meta name="description" content="Страница проекта: объект, роль компании, состав работ, галерея.">
+  <title>Шкафы АСУ ТП для энергоблока АЭС — Проекты — Компания (прототип)</title>
+  <meta name="description" content="Проект: разработка, изготовление и сопровождение шкафов АСУ ТП для энергоблока АЭС — этапы работ, спецификация, галерея.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/ibm-plex-sans/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/blocks.css">
+  <link rel="stylesheet" href="assets/css/project.css">
   <script src="assets/js/concept-init.js"></script>
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -46,23 +48,34 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="page-head" aria-labelledby="project-title" data-block="project-head">
+    <section class="page-head project-head" aria-labelledby="project-title" data-block="project-head">
       <div class="container">
         <nav class="breadcrumbs" aria-label="Навигационная цепочка">
           <ol>
             <li><a href="index.html">Главная</a></li>
             <li><a href="projects.html">Проекты</a></li>
-            <li><span aria-current="page">Название проекта</span></li>
+            <li><span aria-current="page">Шкафы АСУ ТП для энергоблока АЭС</span></li>
           </ol>
         </nav>
-        <h1 class="page-head__title" id="project-title">Название проекта</h1>
-        <p class="section__lead">Одна-две строки о сути проекта. Текст-рыба, будет заменён.</p>
-        <dl class="meta-list" data-block="project-meta">
-          <div class="meta-list__item"><dt>Объект</dt><dd>Энергоблок (условно)</dd></div>
-          <div class="meta-list__item"><dt>Страна</dt><dd>Страна</dd></div>
-          <div class="meta-list__item"><dt>Годы</dt><dd>20XX–20XX</dd></div>
-          <div class="meta-list__item"><dt>Роль компании</dt><dd>Разработка с нуля — от ТЗ до сопровождения производства</dd></div>
-        </dl>
+        <!-- Проект обезличен: объект, заказчик и годы условные. -->
+        <span class="eyebrow project-head__eyebrow">Проект · АСУ ТП</span>
+        <h1 class="page-head__title" id="project-title">Шкафы АСУ ТП для энергоблока АЭС</h1>
+        <div class="project-head__grid">
+          <div class="project-head__intro">
+            <p class="project-head__lead">Разработали с нуля, изготовили и сопроводили в производстве комплект шкафов управления вспомогательными системами энергоблока — от исходных технических требований до приёмки на площадке.</p>
+            <p class="project-head__note">Шкафы объединяют контроллеры, модули ввода-вывода, источники питания и коммутацию; каждая единица прошла заводские испытания по согласованной программе.</p>
+          </div>
+          <div class="spec frame-ticks" data-block="project-meta">
+            <p class="spec__head" aria-hidden="true"><span>Спецификация проекта</span><span>Лист 1 / 1</span></p>
+            <dl class="spec__list">
+              <div class="spec__row"><span class="spec__no" aria-hidden="true">01</span><dt>Объект</dt><dd>Энергоблок АЭС, Россия</dd></div>
+              <div class="spec__row"><span class="spec__no" aria-hidden="true">02</span><dt>Заказчик</dt><dd>Генеральный подрядчик <span class="spec__hint">(условно)</span></dd></div>
+              <div class="spec__row"><span class="spec__no" aria-hidden="true">03</span><dt>Годы</dt><dd>2016–2021 <span class="spec__hint">(условно)</span></dd></div>
+              <div class="spec__row"><span class="spec__no" aria-hidden="true">04</span><dt>Роль компании</dt><dd>Разработка, изготовление, сопровождение</dd></div>
+              <div class="spec__row"><span class="spec__no" aria-hidden="true">05</span><dt>Направление</dt><dd><a href="services.html">АСУ ТП под ключ</a></dd></div>
+            </dl>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section" id="scope" aria-labelledby="scope-title" data-block="scope">

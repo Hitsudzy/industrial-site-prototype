@@ -1,0 +1,123 @@
+/*
+ * Project page (project.html): head with the "specification" table, stages
+ * timeline, collage gallery + lightbox, related service, other projects.
+ * Colours come only from tokens.css (concept B re-dresses the page through the
+ * same tokens); shared pieces (.card, .label, .frame-ticks, .cover__*) live in
+ * blocks.css.
+ */
+
+/* ---------- Head ---------- */
+.project-head__eyebrow {
+  display: block;
+  margin-top: var(--space-5);
+}
+.project-head .page-head__title {
+  max-width: 22ch;
+}
+.project-head__grid {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-5);
+}
+@media (min-width: 960px) {
+  .project-head__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 34rem);
+    gap: var(--space-7);
+    align-items: start;
+  }
+}
+.project-head__intro {
+  display: grid;
+  gap: var(--space-4);
+}
+.project-head__lead {
+  font-size: var(--fs-lg);
+  line-height: 1.55;
+}
+.project-head__note {
+  color: var(--color-text-muted);
+}
+
+/* "Specification" table — a drawing title block in A */
+.spec {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+.spec__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  max-width: none;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  text-transform: var(--label-transform);
+  letter-spacing: var(--label-tracking);
+  color: var(--color-text-muted);
+}
+.spec__list {
+  margin: 0;
+}
+.spec__row {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  border-top: 1px solid var(--color-border);
+}
+.spec__row:first-child {
+  border-top: 0;
+}
+@media (min-width: 480px) {
+  .spec__row {
+    grid-template-columns: 2.75rem minmax(7.5rem, 11rem) minmax(0, 1fr);
+  }
+}
+.spec__no,
+.spec__row dt,
+.spec__row dd {
+  padding: var(--space-3) var(--space-3);
+}
+.spec__no {
+  grid-row: span 2;
+  border-right: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  text-align: center;
+}
+.spec__row dt {
+  padding-bottom: 0;
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  text-transform: var(--label-transform);
+  letter-spacing: var(--label-tracking);
+  color: var(--color-text-muted);
+}
+.spec__row dd {
+  padding-top: var(--space-1);
+  font-weight: var(--fw-bold);
+}
+@media (min-width: 480px) {
+  .spec__no {
+    grid-row: auto;
+  }
+  .spec__row dt {
+    padding-bottom: var(--space-3);
+    border-right: 1px solid var(--color-border);
+    align-self: stretch;
+    padding-top: calc(var(--space-3) + 0.15em);
+  }
+  .spec__row dd {
+    padding-top: var(--space-3);
+  }
+}
+.spec__hint {
+  color: var(--color-text-muted);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-sm);
+}

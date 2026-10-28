@@ -555,56 +555,6 @@ a:hover {
   display: block;
 }
 
-/* ---------- Gallery collage (project.html) ---------- */
-.collage {
-  display: grid;
-  gap: var(--space-4);
-}
-@media (min-width: 720px) {
-  .collage {
-    grid-template-columns: 1.1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  .collage__item--main {
-    grid-row: span 2;
-  }
-}
-.collage__item {
-  margin: 0;
-  min-height: 12rem;
-}
-.collage__item--main {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-.collage__media {
-  display: grid;
-  place-items: center;
-  padding: var(--space-5) var(--space-4);
-  /* drawing grid behind the illustration in A, plain surface in B */
-  background-image:
-    linear-gradient(var(--grid-line-major) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line-major) 1px, transparent 1px);
-  background-size: var(--grid-size) var(--grid-size);
-}
-.collage__media img {
-  width: auto;
-  height: min(28rem, 70vh);
-}
-.collage__caption {
-  padding: var(--space-3) var(--space-4);
-  border-top: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  font-family: var(--font-label);
-  font-size: var(--fs-xs);
-  letter-spacing: var(--label-tracking);
-}
-
 /* ---------- Page head (inner pages) ---------- */
 .page-head {
   padding-block: clamp(2.5rem, 2rem + 3vw, 5rem) var(--space-7);
@@ -634,31 +584,6 @@ a:hover {
 }
 .breadcrumbs [aria-current="page"] {
   color: var(--color-text);
-}
-
-/* Project metadata list */
-.meta-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-6);
-}
-.meta-list__item {
-  padding: var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background: var(--color-surface);
-}
-.meta-list dt {
-  font-family: var(--font-label);
-  font-size: var(--fs-xs);
-  text-transform: var(--label-transform);
-  letter-spacing: var(--label-tracking);
-  color: var(--color-text-muted);
-}
-.meta-list dd {
-  font-weight: var(--fw-bold);
-  margin-top: var(--space-1);
 }
 
 /* CTA band */
