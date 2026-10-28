@@ -85,8 +85,8 @@
     var next = CONCEPTS[other(c)];
     btn.setAttribute(
       "aria-label",
-      "Концепция оформления: " + now.code + " " + now.name +
-        ". Переключить на " + next.code + " " + next.name
+      "Концепция A B: сейчас " + now.code + " " + now.name +
+        ", переключить на " + next.code + " " + next.name
     );
     btn.setAttribute("title", "Переключить на концепцию " + next.code + " " + next.name);
     var opts = btn.querySelectorAll("[data-concept-opt]");

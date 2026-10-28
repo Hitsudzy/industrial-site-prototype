@@ -35,4 +35,18 @@
   } catch (e) { /* storage blocked: the URL parameter still carries the choice */ }
 
   root.setAttribute("data-concept", concept);
+
+  /* Preload the body font of the active concept only: A sets text in IBM Plex Sans,
+     B in Inter (a static preload made B fetch Plex for nothing and swap Inter late). */
+  try {
+    var link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "font";
+    link.type = "font/woff2";
+    link.crossOrigin = "anonymous";
+    link.href = concept === "b"
+      ? "assets/fonts/inter/inter-cyrillic-400-normal.woff2"
+      : "assets/fonts/ibm-plex-sans/ibm-plex-sans-cyrillic-400-normal.woff2";
+    document.head.appendChild(link);
+  } catch (e) { /* no preload: fonts still load from fonts.css */ }
 })();

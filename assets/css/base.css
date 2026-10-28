@@ -718,8 +718,7 @@ a:hover {
   width: 1.875rem;
   height: 1.875rem;
   border-radius: 50%;
-  font-family: var(--font-mono);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0;
   color: var(--color-text-muted);
 }

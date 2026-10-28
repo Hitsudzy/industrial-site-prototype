@@ -237,7 +237,9 @@ python3 tools/gen_gallery.py
 Self-hosted woff2 (только латиница и кириллица) в `assets/fonts/`,
 подключаются в `assets/css/fonts.css`: IBM Plex Sans/Mono — концепция A,
 Inter (300–600) — концепция B (браузер скачивает файлы шрифта, только когда
-он действительно используется). Лицензии — в `CREDITS.md`.
+он действительно используется). Основной текстовый шрифт активной концепции
+(Plex Sans 400 в A, Inter 400 в B) заранее подгружает `concept-init.js`
+через `<link rel="preload">`. Лицензии — в `CREDITS.md`.
 
 ## Доступность
 
