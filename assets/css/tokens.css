@@ -174,9 +174,11 @@
   --shadow: 0 1px 2px rgba(11, 22, 64, 0.06), 0 8px 24px rgba(11, 22, 64, 0.06);
   --border-style: solid;
 
+  /* Inter (assets/fonts/inter): calmer, rounder corporate sans than Plex */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-label: var(--font-sans);
   --heading-weight: 600;
-  --heading-tracking: -0.015em;
+  --heading-tracking: -0.025em;
   --label-transform: none;
   --label-tracking: 0.02em;
 
