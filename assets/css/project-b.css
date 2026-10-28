@@ -470,3 +470,163 @@
 :root[data-concept="b"] .lightbox__title {
   font-size: var(--fs-lg);
 }
+
+/* ---------- 03 Related service: illustrated aside, pill tags ---------- */
+:root[data-concept="b"] .service-card__aside {
+  position: relative;
+  justify-content: center;
+  min-height: 11rem;
+  border: 0;
+  background: var(--illus-bg);
+  overflow: hidden;
+}
+@media (min-width: 720px) {
+  :root[data-concept="b"] .service-card__aside {
+    flex-basis: clamp(16rem, 10rem + 12vw, 24rem);
+    align-items: center;
+  }
+}
+/* concentric rings behind the icon, as on the direction cards of the home page */
+:root[data-concept="b"] .service-card__aside::before,
+:root[data-concept="b"] .service-card__aside::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 75%, transparent);
+  transform: translate(-50%, -50%);
+}
+:root[data-concept="b"] .service-card__aside::before {
+  width: 11rem;
+  height: 11rem;
+}
+:root[data-concept="b"] .service-card__aside::after {
+  width: 18rem;
+  height: 18rem;
+  border-color: color-mix(in srgb, var(--color-surface) 45%, transparent);
+}
+:root[data-concept="b"] .service-card__aside .label {
+  display: none;
+}
+:root[data-concept="b"] .service-card__aside .direction__icon {
+  position: relative;
+  z-index: 1;
+  width: 5.5rem;
+  height: 5.5rem;
+  padding: 1.15rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text);
+}
+:root[data-concept="b"] .service-card__body {
+  gap: var(--space-4);
+  padding: var(--card-pad);
+}
+@media (min-width: 720px) {
+  :root[data-concept="b"] .service-card__body {
+    padding: clamp(1.75rem, 1rem + 2vw, 3rem);
+  }
+}
+:root[data-concept="b"] .service-card .card__title {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  letter-spacing: -0.02em;
+}
+:root[data-concept="b"] .service-card__tags li {
+  padding: 0.35rem 0.9rem;
+  border: 0;
+  border-radius: var(--pill);
+  background: var(--tint);
+  color: var(--color-text);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- 04 Other projects: one big card + rows, as on the home page ---------- */
+:root[data-concept="b"] #neighbours .card-grid--3 {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+:root[data-concept="b"] .project__cover {
+  border-bottom: 0;
+  background: var(--illus-bg);
+}
+:root[data-concept="b"] .cover__text {
+  display: none;
+}
+:root[data-concept="b"] .project .label {
+  color: var(--color-accent);
+}
+@media (min-width: 600px) {
+  :root[data-concept="b"] #neighbours li + li .project {
+    flex-direction: row;
+  }
+  :root[data-concept="b"] #neighbours li + li .project__cover {
+    flex: 0 0 38%;
+    aspect-ratio: auto;
+    min-height: 10rem;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+  :root[data-concept="b"] #neighbours li + li .card__body {
+    gap: var(--space-2);
+  }
+  :root[data-concept="b"] #neighbours li + li .card__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: var(--fs-sm);
+  }
+  :root[data-concept="b"] #neighbours li + li .card__more {
+    padding-top: var(--space-1);
+  }
+}
+@media (min-width: 1000px) {
+  :root[data-concept="b"] #neighbours .card-grid--3 {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+  :root[data-concept="b"] #neighbours li:first-child {
+    grid-row: span 2;
+  }
+  :root[data-concept="b"] #neighbours li:first-child .card__body {
+    flex: 0 0 auto;
+  }
+  :root[data-concept="b"] #neighbours li:first-child .project__cover {
+    flex: 1;
+    aspect-ratio: auto;
+    min-height: 16rem;
+  }
+}
+:root[data-concept="b"] #neighbours li:first-child .card__title {
+  font-size: clamp(1.375rem, 1.1rem + 1vw, 2rem);
+  line-height: 1.2;
+}
+:root[data-concept="b"] #neighbours li:first-child .card__text {
+  font-size: var(--fs-lg);
+}
+
+/* ---------- CTA: a dark rounded band floating on the page ---------- */
+:root[data-concept="b"] .cta-band {
+  margin: var(--section-pad) max(var(--gutter), calc((100% - var(--container)) / 2));
+  padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  border-radius: var(--radius-xl);
+}
+:root[data-concept="b"] .cta-band__inner {
+  max-width: none;
+  padding-inline: clamp(1.25rem, 0.25rem + 4vw, 5rem);
+  gap: var(--space-6);
+}
+:root[data-concept="b"] .cta-band__text {
+  gap: var(--space-4);
+}
+:root[data-concept="b"] .cta-band .eyebrow {
+  border: 1px solid var(--color-border);
+  background: transparent;
+}
+:root[data-concept="b"] .cta-band__lead {
+  max-width: 46ch;
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+}
