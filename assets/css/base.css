@@ -335,6 +335,13 @@ a:hover {
     font-size: var(--fs-base);
   }
 }
+/* 320 px phones: the word next to the mark would push the menu button to a second
+   row; the link keeps its aria-label, the mark stays */
+@media (max-width: 359.98px) {
+  .site-header .brand__name {
+    display: none;
+  }
+}
 
 /* ---------- Sections ---------- */
 .section {
